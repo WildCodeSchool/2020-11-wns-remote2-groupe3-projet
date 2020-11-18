@@ -8,6 +8,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [Create Postgres Database](https://docs.postgresql.fr/13/tutorial-createdb.html)
 - Create .env file in prisma directory and put: `DATABASE_URL="postgresql://username:password@localhost:5432/dbname"`
 - npx prisma migrate up --experimental
+- Start Coding ! 🚀
 
 ## Getting Started
 
