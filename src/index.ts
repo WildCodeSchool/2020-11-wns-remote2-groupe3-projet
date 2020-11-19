@@ -4,12 +4,12 @@ import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
 import { createConnection } from 'typeorm';
 
-import BookResolver from './resolvers/BookResolver'; // add this
+import RoleResolver from './resolvers/RoleResolver'; // add this
 
 const main = async () => {
   await createConnection();
   const schema = await buildSchema({
-    resolvers: [BookResolver],
+    resolvers: [RoleResolver],
   });
   const server = new ApolloServer({ schema });
 
