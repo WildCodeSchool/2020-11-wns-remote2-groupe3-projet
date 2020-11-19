@@ -21,7 +21,7 @@ export default class Message extends BaseEntity {
   @Field(() => String)
   content!: string;
 
-  @Column()
+  @Column('timestamp')
   @Field(() => Date)
   date!: Timestamp;
 

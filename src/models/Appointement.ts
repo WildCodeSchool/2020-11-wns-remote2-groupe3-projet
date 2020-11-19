@@ -3,7 +3,6 @@ import {
   BaseEntity,
   PrimaryGeneratedColumn,
   Column,
-  OneToMany,
   Timestamp,
   OneToOne,
   JoinColumn,
@@ -22,11 +21,11 @@ export default class Appointement extends BaseEntity {
   @Field(() => String)
   title!: string;
 
-  @Column()
+  @Column('timestamp')
   @Field(() => String)
   start_at!: Timestamp;
 
-  @Column()
+  @Column('timestamp')
   @Field(() => String)
   end_at!: Timestamp;
 
