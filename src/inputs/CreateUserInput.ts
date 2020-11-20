@@ -12,10 +12,10 @@ export default class CreateUserInput implements Partial<User> {
   email!: string;
   @Field()
   password!: string;
-  @Field()
-  role!: Role;
-  @Field()
-  languages!: [Language];
+  @Field(() => String)
+  roleId!: string;
+  @Field(() => [Language])
+  languages!: Language[];
   @Field({ nullable: true })
   adress?: string;
   @Field({ nullable: true })
