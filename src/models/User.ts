@@ -45,13 +45,13 @@ export default class User extends BaseEntity {
 
   @Column()
   @Field(() => String)
-  address!: string;
+  address?: string;
 
   @Column()
   @Field(() => String)
-  phone_number!: string;
+  phone_number?: string;
 
   @Column()
   @Field(() => String)
-  picture!: string;
+  picture?: string;
 }
