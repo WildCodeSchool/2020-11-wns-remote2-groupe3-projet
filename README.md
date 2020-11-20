@@ -1,5 +1,9 @@
 # DeafStudy
 
+## ABOUT
+
+DeafStudy is a platform that aims to broad accessibility of online classes to deaf people by listing the availability of various interpreters.
+
 ## HOW TO INSTALL
 
 - Clone the project
