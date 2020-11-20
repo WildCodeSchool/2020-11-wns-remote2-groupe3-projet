@@ -45,6 +45,8 @@ export default class User extends BaseEntity {
   @JoinTable()
   @Field(() => [Language])
   languages!: Language[];
+  @RelationId((user: User) => user.languages)
+  languagesId!: string[];
 
   @Column()
   @Field(() => String)

@@ -1,7 +1,6 @@
 import { InputType, Field } from 'type-graphql';
 import User from '../models/User';
-import Role from '../models/Role';
-import Language from '../models/Language';
+
 @InputType()
 export default class CreateUserInput implements Partial<User> {
   @Field()
@@ -14,8 +13,8 @@ export default class CreateUserInput implements Partial<User> {
   password!: string;
   @Field(() => String)
   roleId!: string;
-  @Field(() => [Language])
-  languages!: Language[];
+  @Field(() => [String])
+  languagesId!: string[];
   @Field({ nullable: true })
   adress?: string;
   @Field({ nullable: true })
