@@ -1,5 +1,13 @@
-import { Entity, BaseEntity, PrimaryGeneratedColumn, Column } from 'typeorm';
-import { Field, ObjectType, Int, ID } from 'type-graphql';
+import {
+  Entity,
+  BaseEntity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToMany,
+  JoinTable,
+} from 'typeorm';
+import { Field, ObjectType, ID } from 'type-graphql';
+import User from './User';
 
 @Entity()
 @ObjectType()
@@ -11,4 +19,8 @@ export default class Language extends BaseEntity {
   @Column()
   @Field(() => String)
   language!: string;
+
+  @ManyToMany(() => User, (user) => user.languages)
+  @JoinTable()
+  users!: User[];
 }

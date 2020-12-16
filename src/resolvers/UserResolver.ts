@@ -2,6 +2,7 @@ import { Resolver, Query, Mutation, Arg } from 'type-graphql';
 import CreateUserInput from '../inputs/CreateUserInput';
 import User from '../models/User';
 import Role from '../models/Role';
+import Language from '../models/Language';
 
 @Resolver()
 export default class UserResolver {
@@ -22,6 +23,17 @@ export default class UserResolver {
     if (user) {
       if (role) {
         user.role = role;
+      }
+      if (data.languagesId) {
+        const promise = data.languagesId.map(async (language) => {
+          const lang = await Language.findOne(language);
+          if (lang) {
+            return lang;
+          } else {
+            return null;
+          }
+        });
+        user.languages = await Promise.all(promise);
       }
       await user.save();
       return user;

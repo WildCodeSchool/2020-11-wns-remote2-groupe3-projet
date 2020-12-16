@@ -6,7 +6,6 @@ import {
   ManyToMany,
   ManyToOne,
   JoinTable,
-  RelationId,
 } from 'typeorm';
 import { ObjectType, Field, ID } from 'type-graphql';
 import Role from './Role';
@@ -38,12 +37,11 @@ export default class User extends BaseEntity {
   @ManyToOne(() => Role, (role) => role.users)
   role!: Role;
 
-  @ManyToMany(() => Language)
+  @ManyToMany(() => Language, (language) => language.users, {
+    cascade: true,
+  })
   @JoinTable()
-  @Field(() => [Language])
   languages!: Language[];
-  @RelationId((user: User) => user.languages)
-  languagesId!: string[];
 
   @Column({
     nullable: true,
