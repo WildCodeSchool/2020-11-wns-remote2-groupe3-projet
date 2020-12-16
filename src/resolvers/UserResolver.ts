@@ -1,5 +1,6 @@
 import { Resolver, Query, Mutation, Arg } from 'type-graphql';
 import CreateUserInput from '../inputs/CreateUserInput';
+import UpdateUserInput from '../inputs/UpdateUserInput';
 import User from '../models/User';
 import Role from '../models/Role';
 import Language from '../models/Language';
@@ -29,8 +30,6 @@ export default class UserResolver {
           const lang = await Language.findOne(language);
           if (lang) {
             return lang;
-          } else {
-            return null;
           }
         });
         user.languages = await Promise.all(promise);
@@ -39,6 +38,43 @@ export default class UserResolver {
       return user;
     }
     throw new Error('Something went wrong');
+  }
+
+  @Mutation(() => User)
+  async updateUser(@Arg('data') data: UpdateUserInput): Promise<User> {
+    const user = await User.findOne(data.id);
+    if (user) {
+      if (data.firstname) {
+        user.firstname = data.firstname;
+      }
+      if (data.lastname) {
+        user.lastname = data.lastname;
+      }
+      if (data.email) {
+        user.email = data.email;
+      }
+      if (data.password) {
+        user.password = data.password;
+      }
+      if (data.roleId) {
+        const role = await Role.findOne(data.roleId);
+        if (role) {
+          user.role = role;
+        }
+      }
+      if (data.adress) {
+        user.address = data.adress;
+      }
+      if (data.phone_number) {
+        user.phone_number = data.phone_number;
+      }
+      if (data.picture) {
+        user.picture = data.picture;
+      }
+      await user.save();
+      return user;
+    }
+    throw new Error(`User with id ${data.id} does not exists.`);
   }
 
   @Mutation(() => User)
