@@ -34,7 +34,9 @@ export default class User extends BaseEntity {
   @Field(() => String)
   password!: string;
 
-  @ManyToOne(() => Role, (role) => role.users)
+  @ManyToOne(() => Role, (role) => role.users, {
+    cascade: true,
+  })
   role!: Role;
 
   @ManyToMany(() => Language, (language) => language.users, {

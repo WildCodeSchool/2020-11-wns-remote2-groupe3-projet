@@ -1,6 +1,10 @@
 import { Resolver, Query, Mutation, Arg } from 'type-graphql';
-import CreateUserInput from '../inputs/CreateUserInput';
-import UpdateUserInput from '../inputs/UpdateUserInput';
+import {
+  CreateUserInput,
+  UpdateUserInfoInput,
+  SetUserRoleInput,
+  SetUserLanguageInput,
+} from '../inputs/UserInput';
 import User from '../models/User';
 import Role from '../models/Role';
 import Language from '../models/Language';
@@ -26,13 +30,9 @@ export default class UserResolver {
         user.role = role;
       }
       if (data.languagesId) {
-        const promise = data.languagesId.map(async (language) => {
-          const lang = await Language.findOne(language);
-          if (lang) {
-            return lang;
-          }
-        });
-        user.languages = await Promise.all(promise);
+        user.languages = await Language.getRepository().findByIds(
+          data.languagesId
+        );
       }
       await user.save();
       return user;
@@ -41,41 +41,29 @@ export default class UserResolver {
   }
 
   @Mutation(() => User)
-  async updateUser(@Arg('data') data: UpdateUserInput): Promise<User> {
+  async updateUserInfo(@Arg('data') data: UpdateUserInfoInput): Promise<User> {
+    await User.update(data.id, data);
     const user = await User.findOne(data.id);
     if (user) {
-      if (data.firstname) {
-        user.firstname = data.firstname;
+      return user;
+    }
+    throw new Error('User not found');
+  }
+
+  @Mutation(() => User)
+  async setUserRole(@Arg('data') data: SetUserRoleInput): Promise<User> {
+    const user = await User.findOne(data.id);
+    const role = await Role.findOne(data.roleId);
+    if (user) {
+      if (role) {
+        user.role = role;
+      } else {
+        throw new Error('Role does not exists');
       }
-      if (data.lastname) {
-        user.lastname = data.lastname;
-      }
-      if (data.email) {
-        user.email = data.email;
-      }
-      if (data.password) {
-        user.password = data.password;
-      }
-      if (data.roleId) {
-        const role = await Role.findOne(data.roleId);
-        if (role) {
-          user.role = role;
-        }
-      }
-      if (data.adress) {
-        user.address = data.adress;
-      }
-      if (data.phone_number) {
-        user.phone_number = data.phone_number;
-      }
-      if (data.picture) {
-        user.picture = data.picture;
-      }
-      console.log(user.role);
       await user.save();
       return user;
     }
-    throw new Error(`User with id ${data.id} does not exists.`);
+    throw new Error('User does not exists');
   }
 
   @Mutation(() => User)
