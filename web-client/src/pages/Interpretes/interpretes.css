@@ -1,0 +1,134 @@
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+/******************
+BREAKPOINTS
+ ******************/
+/******************
+COMMONS
+ ******************/
+/******************
+NAVBAR
+ ******************/
+/******************
+SEARCH BAR
+ ******************/
+/******************
+FILTERS
+******************/
+/******************
+GRID
+******************/
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+.interpretes {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.interpretes-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  row-gap: 3rem;
+  -webkit-column-gap: 3rem;
+          column-gap: 3rem;
+  width: 100%;
+  list-style-type: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.interpretes-cards {
+  justify-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 14vw;
+  padding: 0.9rem;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1d;
+          box-shadow: 0px 3px 15px #868c9f1d;
+  border-radius: 20px;
+}
+
+.interpretes-photo {
+  border-radius: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  min-width: 100%;
+}
+
+.interpretes-nameBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.interpretes-nameBlock .name {
+  font-size: 1.2rem;
+}
+
+.interpretes-nameBlock .calendar {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.interpretes-noteBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1.2rem;
+}
+
+.interpretes-noteBlock .note {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+
+.interpretes-noteBlock .notices {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 1rem;
+}
+
+.interpretes-city {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.interpretes-language {
+  margin-top: 0.5rem;
+}
+/*# sourceMappingURL=interpretes.css.map */

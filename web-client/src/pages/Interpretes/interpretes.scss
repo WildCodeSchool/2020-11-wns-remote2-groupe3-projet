@@ -1,0 +1,70 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.interpretes {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    row-gap: 3rem;
+    column-gap: 3rem;
+    width: 100%;
+    list-style-type: none;
+    box-sizing: border-box;
+  }
+
+  &-cards {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    @include Card;
+    // border: 1px solid black;
+  }
+
+  &-photo {
+    @include BorderRadius;
+    object-fit: contain;
+    min-width: 100%;
+  }
+
+  &-nameBlock {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    .name {
+      font-size: $cardCityFontSize;
+    }
+
+    .calendar {
+      align-self: flex-end;
+    }
+  }
+
+  &-noteBlock {
+    display: flex;
+    margin-top: 1.2rem;
+
+    .note {
+      flex-basis: 40%;
+    }
+
+    .notices {
+      flex-grow: 1;
+      font-size: $cardNoticeFontSize;
+    }
+  }
+
+  &-city {
+    font-size: $cardCityFontSize;
+    margin-top: 0.5rem;
+  }
+
+  &-language {
+    margin-top: 0.5rem;
+  }
+}

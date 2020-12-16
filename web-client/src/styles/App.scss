@@ -1,19 +1,26 @@
+// COMMONS
 @import './common.scss';
 @import './mixins.scss';
 @import './variables.scss';
+
+// LAYOUT COMPONENTS
 @import '../components/layout/navbar/navbar.scss';
+@import '../components/layout/dashboard/dashboard.scss';
+
+// PAGE COMPONENTS
+@import '../pages/Interpretes/interpretes.scss';
 
 .App {
   display: flex;
-  height: 100vh;
+  height: 100%;
 
   // NAV
-  :nth-child(1) {
+  .Navbar {
     flex-basis: 5%;
     min-width: 4rem;
   }
   //BOARD
-  :nth-child(2) {
+  .Dashboard {
     flex-grow: 1;
     background: $lightblue;
   }

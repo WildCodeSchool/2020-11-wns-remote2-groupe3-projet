@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "ACAA;;oBAEoB;AAOpB;;oBAEoB;ADTpB;;oBAEoB;AAuBpB;;oBAEoB;AAMpB;;oBAEoB;AAuBpB;;oBAEoB;AAEpB;;mBAEmB;AAEnB;;mBAEmB",
     "sources": [
-        "mixins.scss"
+        "mixins.scss",
+        "variables.scss"
     ],
     "names": [],
     "file": "mixins.css"
