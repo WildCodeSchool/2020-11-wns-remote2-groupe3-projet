@@ -1,29 +1,24 @@
 import React from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
-
-import './App.css';
-import BookDetails from './components/BookDetails';
-import BookList from './components/BookList';
+import { Route, Switch } from 'react-router-dom';
+import Interpretes from './pages/Interpretes';
+import NavBar from './components/layout/NavBar';
+import './styles/App.scss';
+import Overview from './pages/Overview';
+import History from './pages/History';
+import Messages from './pages/Messages';
+import Settings from './pages/Settings';
+import Logout from './pages/Logout';
 
 const App = (): JSX.Element => (
   <div className="App">
-    <header>
-      <Link to="/">
-        <h1>Bookstore</h1>
-      </Link>
-    </header>
+    <NavBar />
     <Switch>
-      <Route
-        path="/books/:id"
-        render={({
-          match: {
-            params: { id },
-          },
-        }) => <BookDetails id={id} />}
-      />
-      <Route exact path="/">
-        <BookList />
-      </Route>
+      <Route exact path="/overview" component={Overview} />
+      <Route exact path="/interpretes" component={Interpretes} />
+      <Route exact path="/history" component={History} />
+      <Route exact path="/messages" component={Messages} />
+      <Route exact path="/settings" component={Settings} />
+      <Route exact path="/logout" component={Logout} />
     </Switch>
   </div>
 );

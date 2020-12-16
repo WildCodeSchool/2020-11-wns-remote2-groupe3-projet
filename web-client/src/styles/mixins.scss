@@ -1,0 +1,67 @@
+@import './variables.scss';
+
+/******************
+BREAKPOINTS
+ ******************/
+
+ $breakpoints: (
+    "phone":        400px,
+    "phone-wide":   480px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       768px,
+    "tablet-wide":  1024px,
+    "desktop":      1248px,
+    "desktop-wide": 1440px
+);
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+/******************
+NAVBAR
+ ******************/
+@mixin NavbarIcons {
+    width: 20px;
+    height: 15px;
+    color: $navbarGrey;
+    outline:none;
+}
+
+@mixin NavbarItem {
+    font-size: $navbarFontSize;
+    color: navbarGray;
+}
+
+@mixin  ActiveNavbarItem {
+    @include NavbarItem;
+    color: $navbarBlack;
+}
+
+@mixin NavbarRadius {
+    box-shadow: 2px 0px 20px #232F5500;
+    border-radius: 0px 30px 30px 0px;
+}
+
+/******************
+SEARCH BAR
+ ******************/
+
+/******************
+FILTERS
+******************/
+
+/******************
+GRID
+******************/
+
+
+
