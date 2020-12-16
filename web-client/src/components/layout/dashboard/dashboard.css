@@ -42,12 +42,4 @@ FONTS
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-
-.dashboard-top {
-  min-height: 15vh;
-}
-
-.dashboard-main {
-  min-height: 85vh;
-}
 /*# sourceMappingURL=dashboard.css.map */

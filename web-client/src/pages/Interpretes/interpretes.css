@@ -28,7 +28,83 @@ COLORS
 /******************
 FONTS
  ******************/
-.interpretes {
+.interpretesPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.interpretesPage .interpretesFilter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 10vh;
+  width: calc(100% - 40px);
+  margin: auto;
+  margin-top: 4rem;
+}
+
+.interpretesPage .interpretesFilter .searchbar input {
+  width: 20vw;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.interpretesPage .interpretesFilter .searchbar input::-webkit-input-placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+}
+
+.interpretesPage .interpretesFilter .searchbar input:-ms-input-placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+}
+
+.interpretesPage .interpretesFilter .searchbar input::-ms-input-placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+}
+
+.interpretesPage .interpretesFilter .searchbar input::placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+}
+
+.interpretesPage .interpretesFilter .filterbutton button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 125px;
+  height: 3rem;
+  background: #e1e6f4;
+  border: none;
+  outline: none;
+  border-radius: 0.8rem;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.interpretesPage .interpretes {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -45,7 +121,7 @@ FONTS
           justify-content: center;
 }
 
-.interpretes-grid {
+.interpretesPage .interpretes-grid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[5];
@@ -61,7 +137,7 @@ FONTS
           box-sizing: border-box;
 }
 
-.interpretes-cards {
+.interpretesPage .interpretes-cards {
   justify-self: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -78,14 +154,14 @@ FONTS
   border-radius: 20px;
 }
 
-.interpretes-photo {
+.interpretesPage .interpretes-photo {
   border-radius: 20px;
   -o-object-fit: contain;
      object-fit: contain;
   min-width: 100%;
 }
 
-.interpretes-nameBlock {
+.interpretesPage .interpretes-nameBlock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -95,40 +171,40 @@ FONTS
   margin-top: 1.5rem;
 }
 
-.interpretes-nameBlock .name {
+.interpretesPage .interpretes-nameBlock .name {
   font-size: 1.2rem;
 }
 
-.interpretes-nameBlock .calendar {
+.interpretesPage .interpretes-nameBlock .calendar {
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
 
-.interpretes-noteBlock {
+.interpretesPage .interpretes-noteBlock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-top: 1.2rem;
 }
 
-.interpretes-noteBlock .note {
+.interpretesPage .interpretes-noteBlock .note {
   -ms-flex-preferred-size: 40%;
       flex-basis: 40%;
 }
 
-.interpretes-noteBlock .notices {
+.interpretesPage .interpretes-noteBlock .notices {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   font-size: 1rem;
 }
 
-.interpretes-city {
+.interpretesPage .interpretes-city {
   font-size: 1.2rem;
   margin-top: 0.5rem;
 }
 
-.interpretes-language {
+.interpretesPage .interpretes-language {
   margin-top: 0.5rem;
 }
 /*# sourceMappingURL=interpretes.css.map */
