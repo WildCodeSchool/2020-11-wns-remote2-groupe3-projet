@@ -19,6 +19,6 @@ export default class Role extends BaseEntity {
   @Field(() => String)
   role!: string;
 
-  @OneToMany(() => User, (user) => user.id)
-  user!: User[];
+  @OneToMany(() => User, (user) => user.role)
+  users!: User[];
 }

@@ -35,11 +35,8 @@ export default class User extends BaseEntity {
   @Field(() => String)
   password!: string;
 
-  @ManyToOne(() => Role, (role) => role.role)
-  @Field(() => Role)
+  @ManyToOne(() => Role, (role) => role.users)
   role!: Role;
-  @RelationId((user: User) => user.role)
-  roleId!: string;
 
   @ManyToMany(() => Language)
   @JoinTable()
@@ -48,15 +45,21 @@ export default class User extends BaseEntity {
   @RelationId((user: User) => user.languages)
   languagesId!: string[];
 
-  @Column()
+  @Column({
+    nullable: true,
+  })
   @Field(() => String)
   address?: string;
 
-  @Column()
+  @Column({
+    nullable: true,
+  })
   @Field(() => String)
   phone_number?: string;
 
-  @Column()
+  @Column({
+    nullable: true,
+  })
   @Field(() => String)
   picture?: string;
 }

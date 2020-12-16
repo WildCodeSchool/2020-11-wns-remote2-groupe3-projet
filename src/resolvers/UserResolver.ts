@@ -1,6 +1,7 @@
 import { Resolver, Query, Mutation, Arg } from 'type-graphql';
 import CreateUserInput from '../inputs/CreateUserInput';
 import User from '../models/User';
+import Role from '../models/Role';
 
 @Resolver()
 export default class UserResolver {
@@ -16,9 +17,16 @@ export default class UserResolver {
 
   @Mutation(() => User)
   async createUser(@Arg('data') data: CreateUserInput): Promise<User> {
-    const user = User.create(data);
-    await user.save();
-    return user;
+    const user = await User.create(data);
+    const role = await Role.findOne(data.roleId);
+    if (user) {
+      if (role) {
+        user.role = role;
+      }
+      await user.save();
+      return user;
+    }
+    throw new Error('Something went wrong');
   }
 
   @Mutation(() => User)
