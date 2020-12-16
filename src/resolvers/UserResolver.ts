@@ -71,6 +71,7 @@ export default class UserResolver {
       if (data.picture) {
         user.picture = data.picture;
       }
+      console.log(user.role);
       await user.save();
       return user;
     }
