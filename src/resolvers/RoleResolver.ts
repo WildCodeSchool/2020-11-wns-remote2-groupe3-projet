@@ -20,4 +20,14 @@ export default class RoleResolver {
     await role.save();
     return role;
   }
+
+  @Mutation(() => [Role])
+  async deleteRole(@Arg('id') id: string): Promise<Role[]> {
+    const deletedRole = await Role.findOne(id);
+    if (deletedRole !== undefined) {
+      await Role.remove(deletedRole);
+      return Role.find();
+    }
+    throw new Error('Role not found');
+  }
 }

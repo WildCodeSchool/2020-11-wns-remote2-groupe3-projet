@@ -23,12 +23,13 @@ export default class LanguageResolver {
     return language;
   }
 
-  @Mutation()
+  @Mutation(() => [Language])
   async deleteLanguage(@Arg('id') id: string): Promise<Language[]> {
-    const deletedLanguage = Language.findOne(id);
+    const deletedLanguage = await Language.findOne(id);
     if (deletedLanguage !== undefined) {
       await Language.remove(deletedLanguage);
+      return Language.find();
     }
-    return Language.find();
+    throw new Error('Language not found');
   }
 }

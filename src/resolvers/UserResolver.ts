@@ -20,4 +20,14 @@ export default class UserResolver {
     await user.save();
     return user;
   }
+
+  @Mutation(() => User)
+  async deleteUser(@Arg('id') id: string): Promise<User> {
+    const deletedUser = await User.findOne(id);
+    if (deletedUser !== undefined) {
+      await User.remove(deletedUser);
+      return deletedUser;
+    }
+    throw new Error('User not found');
+  }
 }
