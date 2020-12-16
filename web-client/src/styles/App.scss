@@ -1,7 +1,7 @@
 @import './common.scss';
 @import './mixins.scss';
 @import './variables.scss';
-@import './components/navbar.scss';
+@import '../components/layout/navbar/navbar.scss';
 
 .App {
   display: flex;
@@ -17,5 +17,4 @@
     flex-grow: 1;
     background: $lightblue;
   }
-  
 }

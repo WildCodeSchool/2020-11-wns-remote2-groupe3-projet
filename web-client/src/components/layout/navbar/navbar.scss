@@ -1,11 +1,11 @@
-@import '../mixins.scss';
-@import '../variables.scss';
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
 
 .Navbar {
   display: flex;
   flex-direction: column;
   background-color: $white;
-  outline:none;
+  outline: none;
   @include NavbarRadius;
 
   &-logo {
@@ -15,11 +15,11 @@
   &-list {
     text-align: center;
     cursor: pointer;
-        &-item {
-        margin-top: 4rem;
-            a{
-                @include NavbarIcons;
-            }
-        }
+    &-item {
+      margin-top: 4rem;
+      a {
+        @include NavbarIcons;
+      }
+    }
   }
 }
