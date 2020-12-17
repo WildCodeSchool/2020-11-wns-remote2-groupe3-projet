@@ -3,7 +3,6 @@ import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
 import { createConnection } from 'typeorm';
-import cookieParser from 'cookie-parser';
 
 import UserResolver from './resolvers/UserResolver';
 import RoleResolver from './resolvers/RoleResolver';
@@ -25,7 +24,6 @@ const main = async () => {
   const server = new ApolloServer({ schema, context });
 
   const app = express();
-  app.use(cookieParser());
   server.applyMiddleware({ app });
 
   app.listen({ port: 4000 }, () =>

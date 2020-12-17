@@ -94,7 +94,7 @@ export default class UserResolver {
 
         context.res.set('set-cookie', [
           `sessionId=${session.sessionId}; Max-Age=2592000; ${
-            process.env.PRODUCTION ? 'Secure;' : ''
+            process.env.SECURE_COOKIE ? 'Secure;' : ''
           } SameSite=Strict; HttpOnly`,
         ]);
 
