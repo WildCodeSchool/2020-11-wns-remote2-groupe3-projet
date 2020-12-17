@@ -25,6 +25,14 @@ export default class UserResolver {
     return User.findOne(id);
   }
 
+  @Query(() => User)
+  me(@Ctx() { user }: { user: User | null }): User {
+    if (!user) {
+      throw new Error('Not authenticated');
+    }
+    return user;
+  }
+
   @Mutation(() => User)
   async createUser(@Arg('data') data: CreateUserInput): Promise<User> {
     const user = await User.create(data);
