@@ -6,10 +6,12 @@ import {
   ManyToMany,
   ManyToOne,
   JoinTable,
+  BeforeInsert,
 } from 'typeorm';
 import { ObjectType, Field, ID } from 'type-graphql';
 import Role from './Role';
 import Language from './Language';
+import bcrypt from 'bcrypt';
 
 @Entity()
 @ObjectType()
@@ -26,12 +28,11 @@ export default class User extends BaseEntity {
   @Field(() => String)
   lastname!: string;
 
-  @Column()
+  @Column({ unique: true })
   @Field(() => String)
   email!: string;
 
-  @Column()
-  @Field(() => String)
+  @Column({ select: false })
   password!: string;
 
   @ManyToOne(() => Role, (role) => role.users, {
@@ -62,4 +63,12 @@ export default class User extends BaseEntity {
   })
   @Field(() => String)
   picture?: string;
+
+  @BeforeInsert()
+  async hashPassword(): Promise<void> {
+    this.password = await bcrypt.hash(
+      this.password,
+      Number(process.env.HASH_SALT)
+    );
+  }
 }
