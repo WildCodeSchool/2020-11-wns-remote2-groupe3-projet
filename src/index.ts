@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import express from 'express';
+import express, { Request, Response } from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
 import { createConnection } from 'typeorm';
@@ -15,9 +15,9 @@ const main = async () => {
     resolvers: [RoleResolver, UserResolver, LanguageResolver],
   });
 
-  const context = (ctx: any) => {
+  const context = ({ req, res }: { req: Request; res: Response }) => {
     return {
-      res: ctx.res,
+      res,
     };
   };
 

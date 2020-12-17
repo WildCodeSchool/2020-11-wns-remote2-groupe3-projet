@@ -11,6 +11,7 @@ import Role from '../models/Role';
 import Language from '../models/Language';
 import UserSession from '../models/UserSession';
 import bcrypt from 'bcrypt';
+import { Response } from 'express';
 
 @Resolver()
 export default class UserResolver {
@@ -82,7 +83,7 @@ export default class UserResolver {
   @Mutation(() => User)
   async createSession(
     @Arg('credentials') credentials: CreateSessionInput,
-    @Ctx() context: any
+    @Ctx() { res }: { res: Response }
   ): Promise<User> {
     const { email, password } = credentials;
     const user = await User.findOne({ email });
@@ -92,7 +93,7 @@ export default class UserResolver {
         const session = await UserSession.create({ user });
         await session.save();
 
-        context.res.set('set-cookie', [
+        res.set('set-cookie', [
           `sessionId=${session.sessionId}; Max-Age=2592000; ${
             process.env.SECURE_COOKIE ? 'Secure;' : ''
           } SameSite=Strict; HttpOnly`,
