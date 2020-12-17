@@ -32,7 +32,7 @@ export default class User extends BaseEntity {
   @Field(() => String)
   email!: string;
 
-  @Column({ select: false })
+  @Column()
   password!: string;
 
   @ManyToOne(() => Role, (role) => role.users, {

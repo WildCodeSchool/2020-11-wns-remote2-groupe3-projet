@@ -58,3 +58,12 @@ export class SetUserLanguageInput implements Partial<User> {
   @Field(() => [String])
   languagesId!: string[];
 }
+
+@InputType()
+export class CreateSessionInput {
+  @Field()
+  email!: string;
+
+  @Field()
+  password!: string;
+}

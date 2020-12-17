@@ -1,13 +1,16 @@
-import { Resolver, Query, Mutation, Arg } from 'type-graphql';
+import { Resolver, Query, Mutation, Arg, Ctx } from 'type-graphql';
 import {
   CreateUserInput,
   UpdateUserInfoInput,
   SetUserRoleInput,
   SetUserLanguageInput,
+  CreateSessionInput,
 } from '../inputs/UserInput';
 import User from '../models/User';
 import Role from '../models/Role';
 import Language from '../models/Language';
+import UserSession from '../models/UserSession';
+import bcrypt from 'bcrypt';
 
 @Resolver()
 export default class UserResolver {
@@ -74,5 +77,27 @@ export default class UserResolver {
       return deletedUser;
     }
     throw new Error('User not found');
+  }
+
+  @Mutation(() => User)
+  async createSession(
+    @Arg('credentials') credentials: CreateSessionInput,
+    @Ctx() context: any
+  ): Promise<User> {
+    const { email, password } = credentials;
+    const user = await User.findOne({ email });
+    if (user) {
+      const isPasswordMatching = await bcrypt.compare(password, user.password);
+      if (isPasswordMatching) {
+        const session = await UserSession.create({ user });
+        await session.save();
+
+        context.res.set('set-cookie', [`sessionId=${session.sessionId}`]);
+
+        return user;
+      }
+      throw new Error('Bad login');
+    }
+    throw new Error('Bag login');
   }
 }
