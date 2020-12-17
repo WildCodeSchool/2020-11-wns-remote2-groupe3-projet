@@ -92,7 +92,11 @@ export default class UserResolver {
         const session = await UserSession.create({ user });
         await session.save();
 
-        context.res.set('set-cookie', [`sessionId=${session.sessionId}`]);
+        context.res.set('set-cookie', [
+          `sessionId=${session.sessionId}; Max-Age=2592000; ${
+            process.env.PRODUCTION ? 'Secure;' : ''
+          } SameSite=Strict; HttpOnly`,
+        ]);
 
         return user;
       }
