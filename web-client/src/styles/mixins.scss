@@ -39,13 +39,13 @@ NAVBAR
 @mixin NavbarIcons {
   width: 20px;
   height: 15px;
-  color: $navbarGrey;
+  color: $Gray;
   outline: none;
 }
 
 @mixin NavbarItem {
   font-size: $navbarFontSize;
-  color: navbarGray;
+  color: $Gray;
 }
 
 @mixin ActiveNavbarItem {
@@ -62,9 +62,58 @@ NAVBAR
 SEARCH BAR
  ******************/
 
+@mixin DefaultInput {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: $defaultFontSize;
+  color: $dark;
+}
+
+@mixin DefaultInputPlaceHolder {
+  color: $searchbarGrey;
+  margin-left: 1rem;
+}
+
+@mixin DefaultButtonWithIcon {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 12rem;
+  height: 3rem;
+  background: #e1e6f4;
+  border: none;
+  outline: none;
+  border-radius: 0.8rem;
+  box-shadow: 0px 3px 15px #868c9f1c;
+  font-size: $defaultFontSize;
+  cursor: pointer;
+}
+
 /******************
 FILTERS
 ******************/
+
+@mixin FilterLabel {
+  font-size: $filterLabelFontSize;
+  color: $Gray;
+}
+
+@mixin FilterInput {
+  @include DefaultInput;
+  margin-right: unset;
+  margin-top: 0.5rem;
+  width: 20rem;
+  border-radius: 1rem;
+  background-color: $white;
+  font-size: $filterInputFontSize;
+}
 
 /******************
 GRID

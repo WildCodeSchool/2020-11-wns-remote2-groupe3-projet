@@ -2,12 +2,13 @@
 COLORS
  ******************/
 
-$navbarGrey: #868c9f;
+$Gray: #868c9f;
 $searchbarGrey: #aeb2be;
-$navbarBlack: #0e1c33;
+$dark: #0e1c33;
 $red: #dd1e1e;
 $white: #ffffff;
 $lightblue: #f3f6ff;
+
 /******************
 FONTS
  ******************/
@@ -17,4 +18,12 @@ $navarbarFontWeight: 600;
 $cardNameFontSize: 1.5rem;
 $cardNoticeFontSize: 1rem;
 $cardCityFontSize: 1.2rem;
-$searchBarFontSize: 1.5rem;
+$defaultFontSize: 1.5rem;
+$filterLabelFontSize: 1.5rem;
+$filterInputFontSize: 1.6rem;
+
+/******************
+INPUT ICONS
+ ******************/
+
+$inputIcon: 1.2rem;
