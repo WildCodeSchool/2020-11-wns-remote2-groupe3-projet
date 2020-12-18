@@ -121,6 +121,8 @@ GRID
 
 @mixin Card {
   width: 14vw;
+  max-width: 22rem;
+  min-width: 15rem;
   padding: 0.9rem;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 15px #868c9f1d;
