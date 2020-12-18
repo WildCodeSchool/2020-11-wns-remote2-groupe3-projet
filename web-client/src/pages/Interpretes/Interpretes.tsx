@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../Interpretes/interpretes.scss';
 import { FiCalendar } from 'react-icons/fi';
 import Rater from 'react-rater';
 import 'react-rater/lib/react-rater.css';
 import { RiMenu5Fill } from 'react-icons/ri';
+import gsap from 'gsap';
 
 // FAKE DATA
 const interpretes = [
@@ -106,12 +107,16 @@ const interpretes = [
 ];
 
 const Interpretes = (): JSX.Element => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [filterIsVisible, setFilterIsVisible] = useState(false);
 
-  //Functions
-  const toggleVisbility = () => {
-    setIsVisible(!isVisible);
-  };
+  useEffect(() => {
+    gsap.to('form', {
+      duration: 1,
+      autoAlpha: 1,
+      y: 0,
+      ease: 'expo.inOut',
+    });
+  }, [filterIsVisible]);
 
   return (
     <section className="interpretesPage">
@@ -120,7 +125,12 @@ const Interpretes = (): JSX.Element => {
           <div className="searchbar">
             <input type="text" placeholder="Search interpreter" />
           </div>
-          <div className="filterbutton" onClick={toggleVisbility}>
+          <div
+            className="filterbutton"
+            onClick={() => {
+              setFilterIsVisible(!filterIsVisible);
+            }}
+          >
             <button>
               <RiMenu5Fill />
               Filters
@@ -128,7 +138,7 @@ const Interpretes = (): JSX.Element => {
           </div>
         </div>
 
-        {isVisible ? (
+        {filterIsVisible ? (
           <form className="interpretesFilter-filtersblock">
             <div className="rates">
               <label htmlFor="rates">Ratings</label>
