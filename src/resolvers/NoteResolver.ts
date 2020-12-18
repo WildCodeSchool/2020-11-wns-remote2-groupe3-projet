@@ -1,5 +1,5 @@
 import { Resolver, Query, Mutation, Arg } from 'type-graphql';
-import CreateNoteInput from '../inputs/CreateNoteInput';
+import NoteInput from '../inputs/NoteInput';
 import Note from '../models/Note';
 
 @Resolver()
@@ -15,7 +15,7 @@ export default class NoteResolver {
   }
 
   @Mutation(() => Note)
-  async createNote(@Arg('data') data: CreateNoteInput): Promise<Note> {
+  async createNote(@Arg('data') data: NoteInput): Promise<Note> {
     const note = Note.create(data);
     await note.save();
     return note;

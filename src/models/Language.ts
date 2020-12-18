@@ -19,8 +19,4 @@ export default class Language extends BaseEntity {
   @Column()
   @Field(() => String)
   language!: string;
-
-  @ManyToMany(() => User, (user) => user.languages)
-  @JoinTable()
-  users!: User[];
 }

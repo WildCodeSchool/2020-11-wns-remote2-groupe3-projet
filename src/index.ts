@@ -9,6 +9,7 @@ import dotenv from 'dotenv';
 import UserResolver from './resolvers/UserResolver';
 import RoleResolver from './resolvers/RoleResolver';
 import LanguageResolver from './resolvers/LanguageResolver';
+import AppointementResolver from './resolvers/AppointementResolver';
 import UserSession from './models/UserSession';
 
 const main = async () => {
@@ -16,7 +17,12 @@ const main = async () => {
   dotenv.config();
 
   const schema = await buildSchema({
-    resolvers: [RoleResolver, UserResolver, LanguageResolver],
+    resolvers: [
+      RoleResolver,
+      UserResolver,
+      LanguageResolver,
+      AppointementResolver,
+    ],
   });
 
   const context = async ({ req, res }: { req: Request; res: Response }) => {

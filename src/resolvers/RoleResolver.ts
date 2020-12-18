@@ -1,5 +1,5 @@
 import { Resolver, Query, Mutation, Arg } from 'type-graphql';
-import CreateRoleInput from '../inputs/CreateRoleInput';
+import RoleInput from '../inputs/RoleInput';
 import Role from '../models/Role';
 
 @Resolver()
@@ -15,7 +15,7 @@ export default class RoleResolver {
   }
 
   @Mutation(() => Role)
-  async createRole(@Arg('data') data: CreateRoleInput): Promise<Role> {
+  async createRole(@Arg('data') data: RoleInput): Promise<Role> {
     const role = Role.create(data);
     await role.save();
     return role;

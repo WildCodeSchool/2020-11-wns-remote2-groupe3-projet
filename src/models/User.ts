@@ -7,11 +7,14 @@ import {
   ManyToOne,
   JoinTable,
   BeforeInsert,
+  OneToMany,
 } from 'typeorm';
 import { ObjectType, Field, ID } from 'type-graphql';
 import Role from './Role';
 import Language from './Language';
 import bcrypt from 'bcrypt';
+import Message from './Message';
+import Appointement from './Appointement';
 
 @Entity()
 @ObjectType()
@@ -63,6 +66,15 @@ export default class User extends BaseEntity {
   })
   @Field(() => String)
   picture?: string;
+
+  @OneToMany(() => Message, (message) => message.senderConnection)
+  senderMessageConnection?: Message[];
+
+  @OneToMany(() => Message, (message) => message.receiverConnection)
+  receiverMessageConnection?: Message[];
+
+  @OneToMany(() => Appointement, (appointement) => appointement.user)
+  appointements?: Appointement[];
 
   @BeforeInsert()
   async hashPassword(): Promise<void> {

@@ -56,9 +56,7 @@ export default class UserResolver {
   async updateUserInfo(@Arg('data') data: UpdateUserInfoInput): Promise<User> {
     await User.update(data.id, data);
     const user = await User.findOne(data.id);
-    if (user) {
-      return user;
-    }
+    if (user) user;
     throw new Error('User not found');
   }
 
