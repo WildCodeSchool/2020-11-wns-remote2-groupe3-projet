@@ -4,6 +4,7 @@ import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
 import { createConnection } from 'typeorm';
 import cookieParser from 'cookie-parser';
+import dotenv from 'dotenv';
 
 import UserResolver from './resolvers/UserResolver';
 import RoleResolver from './resolvers/RoleResolver';
@@ -12,6 +13,7 @@ import UserSession from './models/UserSession';
 
 const main = async () => {
   await createConnection();
+  dotenv.config();
 
   const schema = await buildSchema({
     resolvers: [RoleResolver, UserResolver, LanguageResolver],

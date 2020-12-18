@@ -35,7 +35,7 @@ export default class UserResolver {
 
   @Mutation(() => User)
   async createUser(@Arg('data') data: CreateUserInput): Promise<User> {
-    const user = await User.create(data);
+    const user = User.create(data);
     const role = await Role.findOne(data.roleId);
     if (user) {
       if (role) {
@@ -79,6 +79,26 @@ export default class UserResolver {
   }
 
   @Mutation(() => User)
+  async setUserLanguage(
+    @Arg('data') data: SetUserLanguageInput
+  ): Promise<User> {
+    const user = await User.findOne(data.id);
+    if (user) {
+      const languages = await Language.getRepository().findByIds(
+        data.languagesId
+      );
+      if (languages) {
+        user.languages = languages;
+      } else {
+        throw new Error('Language(s) not found');
+      }
+      await user.save();
+      return user;
+    }
+    throw new Error('User not found');
+  }
+
+  @Mutation(() => User)
   async deleteUser(@Arg('id') id: string): Promise<User> {
     const deletedUser = await User.findOne(id);
     if (deletedUser !== undefined) {
@@ -98,13 +118,11 @@ export default class UserResolver {
     if (user) {
       const isPasswordMatching = await bcrypt.compare(password, user.password);
       if (isPasswordMatching) {
-        const session = await UserSession.create({ user });
+        const session = UserSession.create({ user });
         await session.save();
 
         res.set('set-cookie', [
-          `sessionId=${session.sessionId}; Max-Age=2592000; ${
-            process.env.SECURE_COOKIE ? 'Secure;' : ''
-          } SameSite=Strict; HttpOnly`,
+          `sessionId=${session.sessionId}; Max-Age=2592000; SameSite=Strict; HttpOnly`,
         ]);
 
         return user;
