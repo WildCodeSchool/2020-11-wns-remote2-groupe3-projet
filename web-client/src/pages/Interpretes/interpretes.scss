@@ -117,6 +117,11 @@
 
       .calendar {
         align-self: flex-end;
+
+        svg {
+          width: 15px;
+          height: 15px;
+        }
       }
     }
 
@@ -125,11 +130,11 @@
       margin-top: 1.2rem;
 
       .note {
-        flex-basis: 40%;
+        display: flex;
       }
 
       .notices {
-        flex-grow: 1;
+        margin-left: 0.5rem;
         font-size: $cardNoticeFontSize;
       }
     }
@@ -139,9 +144,21 @@
       margin-top: 0.5rem;
     }
 
+    &-languageBlock > *:not(:first-child) {
+      margin-left: 0.5rem;
+    }
+
     &-language {
       margin-top: 0.5rem;
       font-size: $cardLanguageFontSize;
+      @include LanguageButton;
+    }
+
+    &-noteBlock,
+    &-nameBlock,
+    &-city,
+    &-languageBlock {
+      padding: 0 1.5rem;
     }
   }
 }

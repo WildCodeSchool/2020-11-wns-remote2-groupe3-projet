@@ -9,6 +9,7 @@ import {
   FiSettings,
   FiLogOut,
 } from 'react-icons/fi';
+import Logo from './logo.png';
 
 const Items = [
   {
@@ -47,8 +48,7 @@ const Items = [
 const NavBar = (): JSX.Element => (
   <div className="Navbar">
     <div className="Navbar-logo">
-      {/* <img src="" alt="logo" /> */}
-      DF
+      <img src={Logo} alt="logo" />
     </div>
     <ul className="Navbar-list">
       {Items.map((item) => {

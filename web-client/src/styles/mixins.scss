@@ -31,8 +31,7 @@ COMMONS
  ******************/
 
 @mixin BorderRadius {
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
 }
 
 /******************
@@ -129,4 +128,14 @@ GRID
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 15px #868c9f1d;
   @include BorderRadius;
+}
+
+@mixin LanguageButton {
+  width: 3rem;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: $blue;
+  border: 2px solid $blue;
+  outline: none;
+  color: $white;
 }

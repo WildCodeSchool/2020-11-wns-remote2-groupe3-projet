@@ -109,6 +109,11 @@ INPUT ICONS
   margin: 3rem 0rem;
 }
 
+.Navbar-logo img {
+  max-width: 9vw;
+  width: 100%;
+}
+
 .Navbar-list {
   text-align: center;
   cursor: pointer;
@@ -118,9 +123,6 @@ INPUT ICONS
 
 .Navbar-list-item {
   margin-top: 4rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   width: 100%;
 }
 
@@ -540,12 +542,12 @@ INPUT ICONS
 
 .App .Navbar {
   position: relative;
-  -ms-flex-preferred-size: 5%;
-      flex-basis: 5%;
+  -ms-flex-preferred-size: 6%;
+      flex-basis: 6%;
   min-width: 4rem;
-  padding: 0 1.5rem;
-  -webkit-transition: all ease-out 0.2s;
-  transition: all ease-out 0.2s;
+  padding: 0 1rem;
+  -webkit-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
   background-color: #ffffff;
   -webkit-box-shadow: 2px 0px 20px #232f5500;
           box-shadow: 2px 0px 20px #232f5500;

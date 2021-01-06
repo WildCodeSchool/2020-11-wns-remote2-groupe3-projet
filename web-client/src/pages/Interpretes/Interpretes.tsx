@@ -198,11 +198,19 @@ const Interpretes = (): JSX.Element => {
                       rating={interprete.note}
                       interactive={false}
                     />
+                    <p className="notices">{interprete.notices}</p>
                   </div>
-                  <p className="notices">{interprete.notices}</p>
                 </div>
                 <p className="interpretes-city">{interprete.city}</p>
-                <p className="interpretes-language">{interprete.langues}</p>
+                <div className="interpretes-languageBlock">
+                  {interprete.langues.map((langue, index) => {
+                    return (
+                      <button className="interpretes-language" key={index}>
+                        {langue}
+                      </button>
+                    );
+                  })}
+                </div>
               </li>
             );
           })}

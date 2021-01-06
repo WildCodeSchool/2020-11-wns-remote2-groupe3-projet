@@ -51,6 +51,11 @@ INPUT ICONS
   margin: 3rem 0rem;
 }
 
+.Navbar-logo img {
+  max-width: 9vw;
+  width: 100%;
+}
+
 .Navbar-list {
   text-align: center;
   cursor: pointer;

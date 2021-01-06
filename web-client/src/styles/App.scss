@@ -17,15 +17,16 @@
   // NAV
   .Navbar {
     position: relative;
-    flex-basis: 5%;
+    flex-basis: 6%;
     min-width: 4rem;
-    padding: 0 1.5rem;
-    transition: all ease-out 0.2s;
+    padding: 0 1rem;
+    transition: all ease-out 0.3s;
     background-color: $white;
     @include NavbarRadius;
     //Navbar expanded menu
     &:hover {
       flex-basis: 15%;
+
       .Navbar-list-item {
         transition: all ease-in-out 0.1s;
       }

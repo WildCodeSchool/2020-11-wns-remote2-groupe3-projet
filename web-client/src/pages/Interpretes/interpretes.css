@@ -304,6 +304,11 @@ INPUT ICONS
       align-self: flex-end;
 }
 
+.interpretesPage .interpretes-nameBlock .calendar svg {
+  width: 15px;
+  height: 15px;
+}
+
 .interpretesPage .interpretes-noteBlock {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -312,24 +317,38 @@ INPUT ICONS
 }
 
 .interpretesPage .interpretes-noteBlock .note {
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .interpretesPage .interpretes-noteBlock .notices {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  margin-left: 0.5rem;
   font-size: 1.2rem;
 }
 
 .interpretesPage .interpretes-city {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-top: 0.5rem;
+}
+
+.interpretesPage .interpretes-languageBlock > *:not(:first-child) {
+  margin-left: 0.5rem;
 }
 
 .interpretesPage .interpretes-language {
   margin-top: 0.5rem;
   font-size: 1.2rem;
+  width: 3rem;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: #426cb1;
+  border: 2px solid #426cb1;
+  outline: none;
+  color: #ffffff;
+}
+
+.interpretesPage .interpretes-noteBlock, .interpretesPage .interpretes-nameBlock, .interpretesPage .interpretes-city, .interpretesPage .interpretes-languageBlock {
+  padding: 0 1.5rem;
 }
 /*# sourceMappingURL=interpretes.css.map */
