@@ -1,24 +1,23 @@
-// import { InputType, Field } from 'type-graphql';
-// import Message from '../models/Message';
-// import User from '../models/User';
+import { InputType, Field } from 'type-graphql';
+import Message from '../models/Message';
 
-// @InputType()
-// export class CreateMessageInput implements Partial<Message> {
-//   @Field()
-//   content!: string;
+@InputType()
+export class CreateMessageInput implements Partial<Message> {
+  @Field()
+  content!: string;
 
-//   @Field(() => User)
-//   sender!: User;
+  @Field(() => String)
+  senderId!: string;
 
-//   @Field(() => User)
-//   receiver!: User;
-// }
+  @Field(() => String)
+  receiverId!: string;
+}
 
-// @InputType()
-// export class ConversationInput implements Partial<Message> {
-//   @Field()
-//   sender!: User;
+@InputType()
+export class ConversationInput {
+  @Field()
+  senderId!: string;
 
-//   @Field()
-//   receiver!: User;
-// }
+  @Field()
+  receiverId!: string;
+}

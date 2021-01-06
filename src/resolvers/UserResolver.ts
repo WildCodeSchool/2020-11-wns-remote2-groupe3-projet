@@ -21,7 +21,7 @@ export default class UserResolver {
   }
 
   @Query(() => User)
-  role(@Arg('id') id: string): Promise<User | undefined> {
+  user(@Arg('id') id: string): Promise<User | undefined> {
     return User.findOne(id);
   }
 

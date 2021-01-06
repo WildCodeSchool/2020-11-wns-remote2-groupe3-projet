@@ -37,8 +37,10 @@ export default class AppointementResolver {
     @Arg('data') data: CreateAppointementInput
   ): Promise<Appointement> {
     const appointement = Appointement.create(data);
-    const user = await User.findOne(data.user);
-    const interpreter = await User.findOne(data.interpreter);
+    const user = await User.findOne({ where: { id: data.userId } });
+    const interpreter = await User.findOne({
+      where: { id: data.interpreterId },
+    });
 
     if (user) {
       appointement.user = user;
@@ -51,7 +53,7 @@ export default class AppointementResolver {
       throw new Error('Interpreter does not exists');
     }
 
-    appointement.save();
+    await appointement.save();
     return appointement;
   }
 
@@ -60,17 +62,26 @@ export default class AppointementResolver {
     @Arg('data') data: UpdateAppointementInput
   ): Promise<Appointement> {
     await Appointement.update(data.id, data);
-    const appointement = Appointement.findOne(data.id);
-    if (appointement) appointement;
+    const appointement = await Appointement.findOne(data.id);
+    if (appointement) {
+      if (data.title) appointement.title = data.title;
+      if (data.start_at) appointement.start_at = data.start_at;
+      if (data.end_at) appointement.end_at = data.end_at;
+      if (data.color) appointement.color = data.color;
+      if (data.status) appointement.status = data.status;
+      if (data.is_done) appointement.is_done = data.is_done;
+      await appointement.save();
+      return appointement;
+    }
     throw new Error('Appointement not found');
   }
 
   @Mutation(() => Appointement)
-  async deleteAppointement(@Arg('id') id: string): Promise<Appointement> {
+  async deleteAppointement(@Arg('id') id: string): Promise<string> {
     const appointement = await Appointement.findOne(id);
     if (appointement) {
       await Appointement.remove(appointement);
-      return appointement;
+      return `Appointement ${id} has been deleted successfully`;
     }
     throw new Error('Appointement not found');
   }

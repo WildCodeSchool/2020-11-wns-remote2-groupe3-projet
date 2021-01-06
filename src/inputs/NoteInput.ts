@@ -7,4 +7,6 @@ export default class NoteInput implements Partial<Note> {
   note!: number;
   @Field()
   comment?: string;
+  @Field()
+  appointementId!: string;
 }

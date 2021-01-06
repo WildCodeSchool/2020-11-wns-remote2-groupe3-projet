@@ -43,9 +43,7 @@ export default class User extends BaseEntity {
   })
   role!: Role;
 
-  @ManyToMany(() => Language, (language) => language.users, {
-    cascade: true,
-  })
+  @ManyToMany(() => Language)
   @JoinTable()
   languages!: Language[];
 
@@ -67,11 +65,11 @@ export default class User extends BaseEntity {
   @Field(() => String)
   picture?: string;
 
-  @OneToMany(() => Message, (message) => message.senderConnection)
-  senderMessageConnection?: Message[];
+  @OneToMany(() => Message, (message) => message.sender)
+  senderMessages?: Message[];
 
-  @OneToMany(() => Message, (message) => message.receiverConnection)
-  receiverMessageConnection?: Message[];
+  @OneToMany(() => Message, (message) => message.receiver)
+  receiverMessages?: Message[];
 
   @OneToMany(() => Appointement, (appointement) => appointement.user)
   appointements?: Appointement[];

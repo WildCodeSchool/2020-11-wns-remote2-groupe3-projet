@@ -5,7 +5,6 @@ import {
   Column,
   Timestamp,
   ManyToOne,
-  JoinColumn,
 } from 'typeorm';
 import { Field, ID, ObjectType } from 'type-graphql';
 import User from './User';
@@ -25,23 +24,9 @@ export default class Message extends BaseEntity {
   @Field(() => Date)
   date!: Timestamp;
 
-  @Column({ name: 'sender' })
-  @Field()
-  senderId!: string;
-
-  @Field(() => User)
+  @ManyToOne(() => User, (user) => user.senderMessages)
   sender!: User;
-  @ManyToOne(() => User, (user) => user.senderMessageConnection)
-  @JoinColumn({ name: 'sender' })
-  senderConnection!: User;
 
-  @Column({ name: 'receiver' })
-  @Field()
-  receiverId!: string;
-
-  @Field(() => User)
+  @ManyToOne(() => User, (user) => user.receiverMessages)
   receiver!: User;
-  @ManyToOne(() => User, (user) => user.receiverMessageConnection)
-  @JoinColumn({ name: 'receiver' })
-  receiverConnection!: User;
 }

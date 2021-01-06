@@ -11,6 +11,8 @@ import RoleResolver from './resolvers/RoleResolver';
 import LanguageResolver from './resolvers/LanguageResolver';
 import AppointementResolver from './resolvers/AppointementResolver';
 import UserSession from './models/UserSession';
+import NoteResolver from './resolvers/NoteResolver';
+import MessageResolver from './resolvers/MessageResolver';
 
 const main = async () => {
   await createConnection();
@@ -22,6 +24,8 @@ const main = async () => {
       UserResolver,
       LanguageResolver,
       AppointementResolver,
+      NoteResolver,
+      MessageResolver,
     ],
   });
 

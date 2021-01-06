@@ -1,6 +1,5 @@
 import { Field, InputType } from 'type-graphql';
 import Appointement from '../models/Appointement';
-import User from '../models/User';
 
 @InputType()
 export class CreateAppointementInput implements Partial<Appointement> {
@@ -20,10 +19,10 @@ export class CreateAppointementInput implements Partial<Appointement> {
   status!: string;
 
   @Field()
-  user!: User;
+  userId!: string;
 
   @Field()
-  interpreter!: User;
+  interpreterId!: string;
 }
 
 @InputType()
@@ -31,21 +30,21 @@ export class UpdateAppointementInput implements Partial<Appointement> {
   @Field()
   id!: string;
 
-  @Field()
+  @Field({ nullable: true })
   title?: string;
 
-  @Field()
+  @Field({ nullable: true })
   start_at?: Date;
 
-  @Field()
+  @Field({ nullable: true })
   end_at?: Date;
 
-  @Field()
+  @Field({ nullable: true })
   color?: string;
 
-  @Field()
+  @Field({ nullable: true })
   status?: string;
 
-  @Field()
+  @Field({ nullable: true })
   is_done?: boolean;
 }
