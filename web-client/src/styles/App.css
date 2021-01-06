@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 html {
   height: 100%;
   font-size: 62.5%;
@@ -21,34 +29,7 @@ COLORS
 FONTS
  ******************/
 /******************
-BREAKPOINTS
- ******************/
-/******************
-COMMONS
- ******************/
-/******************
-NAVBAR
- ******************/
-/******************
-SEARCH BAR
- ******************/
-/******************
-FILTERS
-******************/
-/******************
-GRID
-******************/
-/******************
-COLORS
- ******************/
-/******************
-FONTS
- ******************/
-/******************
-COLORS
- ******************/
-/******************
-FONTS
+INPUT ICONS
  ******************/
 /******************
 BREAKPOINTS
@@ -73,6 +54,45 @@ COLORS
  ******************/
 /******************
 FONTS
+ ******************/
+/******************
+INPUT ICONS
+ ******************/
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+/******************
+INPUT ICONS
+ ******************/
+/******************
+BREAKPOINTS
+ ******************/
+/******************
+COMMONS
+ ******************/
+/******************
+NAVBAR
+ ******************/
+/******************
+SEARCH BAR
+ ******************/
+/******************
+FILTERS
+******************/
+/******************
+GRID
+******************/
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+/******************
+INPUT ICONS
  ******************/
 .Navbar {
   display: -webkit-box;
@@ -82,11 +102,7 @@ FONTS
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #ffffff;
   outline: none;
-  -webkit-box-shadow: 2px 0px 20px #232f5500;
-          box-shadow: 2px 0px 20px #232f5500;
-  border-radius: 0px 30px 30px 0px;
 }
 
 .Navbar-logo {
@@ -96,10 +112,16 @@ FONTS
 .Navbar-list {
   text-align: center;
   cursor: pointer;
+  font-size: 1.5rem;
+  list-style-type: none;
 }
 
 .Navbar-list-item {
   margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
 }
 
 .Navbar-list-item a {
@@ -109,11 +131,28 @@ FONTS
   outline: none;
 }
 
+.Navbar-list-item-name {
+  margin-left: 1rem;
+  opacity: 0;
+  -webkit-transition: all ease-in 0.2s;
+  transition: all ease-in 0.2s;
+  font-family: "Nunito Sans", sans-serif;
+  color: #868c9f;
+  text-decoration: none;
+}
+
+.Navbar-list-item-name:hover {
+  font-weight: 600;
+}
+
 /******************
 COLORS
  ******************/
 /******************
 FONTS
+ ******************/
+/******************
+INPUT ICONS
  ******************/
 /******************
 BREAKPOINTS
@@ -138,6 +177,9 @@ COLORS
  ******************/
 /******************
 FONTS
+ ******************/
+/******************
+INPUT ICONS
  ******************/
 .dashboard {
   display: -webkit-box;
@@ -152,14 +194,7 @@ FONTS
   background-color: #f3f6ff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-.dashboard-top {
-  min-height: 15vh;
-}
-
-.dashboard-main {
-  min-height: 85vh;
+  overflow: scroll;
 }
 
 /******************
@@ -167,6 +202,9 @@ COLORS
  ******************/
 /******************
 FONTS
+ ******************/
+/******************
+INPUT ICONS
  ******************/
 /******************
 BREAKPOINTS
@@ -192,7 +230,199 @@ COLORS
 /******************
 FONTS
  ******************/
-.interpretes {
+/******************
+INPUT ICONS
+ ******************/
+.interpretesPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: calc(100% - 10rem);
+  margin: auto;
+}
+
+.interpretesPage .interpretesFilter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 5vh;
+  margin-top: 4rem;
+}
+
+.interpretesPage .interpretesFilter div {
+  display: inline-block;
+}
+
+.interpretesPage .interpretesFilter div,
+.interpretesPage .interpretesFilter form {
+  padding: 0 2vw;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-searchblock .searchbar {
+  width: 30rem;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-searchblock .searchbar input {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-searchblock .searchbar input::-webkit-input-placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-searchblock .searchbar input:-ms-input-placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-searchblock .searchbar input::-ms-input-placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-searchblock .searchbar input::placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-searchblock .filterbutton button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 12rem;
+  height: 3rem;
+  background: #e1e6f4;
+  border: none;
+  outline: none;
+  border-radius: 0.8rem;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock {
+  opacity: 0;
+  margin-top: 2rem;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock label,
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock input,
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock button {
+  display: block;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock label {
+  font-size: 1.5rem;
+  color: #868c9f;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock input {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  margin-right: unset;
+  margin-top: 0.5rem;
+  width: 20rem;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  font-size: 1.6rem;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock input::-webkit-input-placeholder,
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock button::-webkit-input-placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+  color: #0e1c33;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock input:-ms-input-placeholder,
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock button:-ms-input-placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+  color: #0e1c33;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock input::-ms-input-placeholder,
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock button::-ms-input-placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+  color: #0e1c33;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock input::placeholder,
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock button::placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+  color: #0e1c33;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 12rem;
+  height: 3rem;
+  background: #e1e6f4;
+  border: none;
+  outline: none;
+  border-radius: 0.8rem;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  width: 20rem;
+  font-size: 1.6rem;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock button svg {
+  font-size: 1.2rem;
+}
+
+.interpretesPage .interpretes {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -207,25 +437,24 @@ FONTS
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 4rem;
 }
 
-.interpretes-grid {
+.interpretesPage .interpretes-grid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[5];
       grid-template-columns: repeat(5, 1fr);
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
-  row-gap: 3rem;
-  -webkit-column-gap: 3rem;
-          column-gap: 3rem;
-  width: 100%;
+  row-gap: 5rem;
+  width: calc(100% - 5rem);
   list-style-type: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.interpretes-cards {
+.interpretesPage .interpretes-cards {
   justify-self: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -235,21 +464,25 @@ FONTS
       -ms-flex-direction: column;
           flex-direction: column;
   width: 14vw;
+  max-width: 22rem;
+  min-width: 15rem;
   padding: 0.9rem;
   background: #ffffff 0% 0% no-repeat padding-box;
   -webkit-box-shadow: 0px 3px 15px #868c9f1d;
           box-shadow: 0px 3px 15px #868c9f1d;
-  border-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
-.interpretes-photo {
-  border-radius: 20px;
+.interpretesPage .interpretes-photo {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   -o-object-fit: contain;
      object-fit: contain;
   min-width: 100%;
 }
 
-.interpretes-nameBlock {
+.interpretesPage .interpretes-nameBlock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -259,54 +492,90 @@ FONTS
   margin-top: 1.5rem;
 }
 
-.interpretes-nameBlock .name {
-  font-size: 1.2rem;
+.interpretesPage .interpretes-nameBlock .name {
+  font-size: 1.9rem;
 }
 
-.interpretes-nameBlock .calendar {
+.interpretesPage .interpretes-nameBlock .calendar {
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
 
-.interpretes-noteBlock {
+.interpretesPage .interpretes-noteBlock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-top: 1.2rem;
 }
 
-.interpretes-noteBlock .note {
+.interpretesPage .interpretes-noteBlock .note {
   -ms-flex-preferred-size: 40%;
       flex-basis: 40%;
 }
 
-.interpretes-noteBlock .notices {
+.interpretesPage .interpretes-noteBlock .notices {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  font-size: 1rem;
-}
-
-.interpretes-city {
   font-size: 1.2rem;
+}
+
+.interpretesPage .interpretes-city {
+  font-size: 1.5rem;
   margin-top: 0.5rem;
 }
 
-.interpretes-language {
+.interpretesPage .interpretes-language {
   margin-top: 0.5rem;
+  font-size: 1.2rem;
 }
 
 .App {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
+  font-family: "Nunito Sans", sans-serif;
+  height: 100vh;
 }
 
 .App .Navbar {
+  position: relative;
   -ms-flex-preferred-size: 5%;
       flex-basis: 5%;
   min-width: 4rem;
+  padding: 0 1.5rem;
+  -webkit-transition: all ease-out 0.2s;
+  transition: all ease-out 0.2s;
+  background-color: #ffffff;
+  -webkit-box-shadow: 2px 0px 20px #232f5500;
+          box-shadow: 2px 0px 20px #232f5500;
+  border-radius: 0px 30px 30px 0px;
+}
+
+.App .Navbar:hover {
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+}
+
+.App .Navbar:hover .Navbar-list-item {
+  -webkit-transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.1s;
+}
+
+.App .Navbar:hover .Navbar-list-item-name {
+  opacity: 1;
+}
+
+.App .Navbar::before {
+  content: '';
+  position: absolute;
+  background-color: #f3f6ff;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  padding: 0;
+  z-index: -1;
 }
 
 .App .Dashboard {

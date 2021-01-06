@@ -13,10 +13,38 @@
 .App {
   display: flex;
   font-family: $nunito;
+  height: 100vh;
   // NAV
   .Navbar {
+    position: relative;
     flex-basis: 5%;
     min-width: 4rem;
+    padding: 0 1.5rem;
+    transition: all ease-out 0.2s;
+    background-color: $white;
+    @include NavbarRadius;
+    //Navbar expanded menu
+    &:hover {
+      flex-basis: 15%;
+      .Navbar-list-item {
+        transition: all ease-in-out 0.1s;
+      }
+      .Navbar-list-item-name {
+        opacity: 1;
+      }
+    }
+    // border-radius workaround
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: $lightblue;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      right: 0;
+      padding: 0;
+      z-index: -1;
+    }
   }
   //BOARD
   .Dashboard {

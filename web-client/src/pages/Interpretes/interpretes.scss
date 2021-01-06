@@ -11,12 +11,13 @@
     flex-direction: column;
     min-height: 5vh;
     margin-top: 4rem;
+
     div {
       display: inline-block;
     }
     div,
     form {
-      padding: 0 1.5rem;
+      padding: 0 2vw;
     }
 
     .interpretesFilter-searchblock {

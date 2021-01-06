@@ -4,10 +4,7 @@
 .Navbar {
   display: flex;
   flex-direction: column;
-  background-color: $white;
   outline: none;
-  @include NavbarRadius;
-
   &-logo {
     margin: 3rem 0rem;
   }
@@ -16,10 +13,26 @@
     text-align: center;
     cursor: pointer;
     font-size: 1.5rem;
+    list-style-type: none;
     &-item {
       margin-top: 4rem;
+      display: flex;
+      width: 100%;
       a {
         @include NavbarIcons;
+      }
+    }
+
+    &-item-name {
+      margin-left: 1rem;
+      opacity: 0;
+      transition: all ease-in 0.2s;
+      font-family: $nunito;
+      color: $Gray;
+      text-decoration: none;
+
+      &:hover {
+        font-weight: 600;
       }
     }
   }

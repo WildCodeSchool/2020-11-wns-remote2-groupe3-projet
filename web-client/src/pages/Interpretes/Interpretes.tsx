@@ -109,6 +109,7 @@ const interpretes = [
 const Interpretes = (): JSX.Element => {
   const [filterIsVisible, setFilterIsVisible] = useState(false);
 
+  // animation fadein Formulaire
   useEffect(() => {
     gsap.to('form', {
       duration: 1,
@@ -192,7 +193,11 @@ const Interpretes = (): JSX.Element => {
                 </div>
                 <div className="interpretes-noteBlock">
                   <div className="note">
-                    <Rater total={5} rating={interprete.note} />
+                    <Rater
+                      total={5}
+                      rating={interprete.note}
+                      interactive={false}
+                    />
                   </div>
                   <p className="notices">{interprete.notices}</p>
                 </div>

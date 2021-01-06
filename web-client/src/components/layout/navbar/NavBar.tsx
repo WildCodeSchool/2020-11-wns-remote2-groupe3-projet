@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.scss';
 import {
@@ -42,6 +42,7 @@ const Items = [
     icon: <FiLogOut />,
   },
 ];
+// let navbar = useRef();
 
 const NavBar = (): JSX.Element => (
   <div className="Navbar">
@@ -54,6 +55,9 @@ const NavBar = (): JSX.Element => (
         return (
           <li className="Navbar-list-item" key={item.name}>
             <Link to={item.link}>{item.icon}</Link>
+            <Link to={item.link} className="Navbar-list-item-name">
+              {item.name}
+            </Link>
           </li>
         );
       })}
