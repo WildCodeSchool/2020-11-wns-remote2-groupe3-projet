@@ -18,7 +18,7 @@ export const setSessionIdCookie = (res: Response) => (id: string): void => {
   res.cookie('sessionId', id, {
     maxAge: 3692000000,
     httpOnly: true,
-    secure: !!process.env.SECURE_COOKIE,
+    secure: false,
     sameSite: 'strict',
     path: '/',
   });
