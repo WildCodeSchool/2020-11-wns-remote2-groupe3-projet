@@ -31,9 +31,9 @@ export class CreateUserInput implements Partial<User> {
   email!: string;
   @Field()
   password!: string;
-  @Field({ nullable: true })
+  @Field(() => String, { nullable: true })
   roleId?: string;
-  @Field(() => [String])
+  @Field(() => [String], { nullable: true })
   languagesId?: string[];
   @Field({ nullable: true })
   adress?: string;

@@ -55,8 +55,10 @@ export default class UserResolver {
   async updateUserInfo(@Arg('data') data: UpdateUserInfoInput): Promise<User> {
     await User.update(data.id, data);
     const user = await User.findOne(data.id);
-    if (user) user;
-    throw new Error('User not found');
+    if (!user) {
+      throw new Error('User not found');
+    }
+    return user;
   }
 
   @Mutation(() => User)
@@ -95,12 +97,12 @@ export default class UserResolver {
     throw new Error('User not found');
   }
 
-  @Mutation(() => User)
-  async deleteUser(@Arg('id') id: string): Promise<User> {
+  @Mutation(() => String)
+  async deleteUser(@Arg('id') id: string): Promise<string> {
     const deletedUser = await User.findOne(id);
     if (deletedUser !== undefined) {
       await User.remove(deletedUser);
-      return deletedUser;
+      return 'User has been deleted.';
     }
     throw new Error('User not found');
   }
