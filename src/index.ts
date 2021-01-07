@@ -2,8 +2,10 @@ import 'reflect-metadata';
 import { createConnection } from 'typeorm';
 
 import { getExpressServer } from './express-server';
+import * as dotenv from 'dotenv';
 
 const main = async () => {
+  dotenv.config();
   await createConnection();
 
   const { expressServer, apolloServer } = await getExpressServer();
