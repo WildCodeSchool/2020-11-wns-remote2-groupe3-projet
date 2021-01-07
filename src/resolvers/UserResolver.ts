@@ -11,7 +11,6 @@ import Role from '../models/Role';
 import Language from '../models/Language';
 import UserSession from '../models/UserSession';
 import bcrypt from 'bcrypt';
-import { Response } from 'express';
 
 @Resolver()
 export default class UserResolver {
@@ -28,7 +27,7 @@ export default class UserResolver {
   @Query(() => User)
   me(@Ctx() { user }: { user: User | null }): User {
     if (!user) {
-      throw new Error('Not authenticated');
+      throw new Error('You are not authenticated');
     }
     return user;
   }
@@ -109,7 +108,7 @@ export default class UserResolver {
   @Mutation(() => User)
   async createSession(
     @Arg('credentials') credentials: CreateSessionInput,
-    @Ctx() { res }: { res: Response }
+    @Ctx() { setSessionIdCookie }: { setSessionIdCookie: (id: string) => void }
   ): Promise<User> {
     const { email, password } = credentials;
     const user = await User.findOne({ email });
@@ -119,9 +118,7 @@ export default class UserResolver {
         const session = UserSession.create({ user });
         await session.save();
 
-        res.set('set-cookie', [
-          `sessionId=${session.sessionId}; Max-Age=2592000; SameSite=Strict; HttpOnly`,
-        ]);
+        setSessionIdCookie(session.sessionId);
 
         return user;
       }

@@ -15,6 +15,7 @@ import Language from './Language';
 import bcrypt from 'bcrypt';
 import Message from './Message';
 import Appointement from './Appointement';
+import UserSession from './UserSession';
 
 @Entity()
 @ObjectType()
@@ -82,3 +83,14 @@ export default class User extends BaseEntity {
     );
   }
 }
+
+export const getUserFromSessionId = async (
+  sessionId: string
+): Promise<User | null> => {
+  const userSession = await UserSession.findOne(
+    { sessionId: sessionId },
+    { relations: ['user'] }
+  );
+  const user = userSession ? userSession.user : null;
+  return user;
+};
