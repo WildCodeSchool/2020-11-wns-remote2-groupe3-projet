@@ -3,8 +3,8 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  Timestamp,
   ManyToOne,
+  Timestamp,
 } from 'typeorm';
 import { Field, ID, ObjectType } from 'type-graphql';
 import User from './User';

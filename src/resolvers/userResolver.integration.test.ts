@@ -4,16 +4,21 @@ import { createConnection, getConnection } from 'typeorm';
 import { getExpressServer } from '../express-server';
 import UserSession from '../models/UserSession';
 import User from '../models/User';
+import Role from '../models/Role';
+import Language from '../models/Language';
+import Message from '../models/Message';
+import Note from '../models/Note';
+import Appointement from '../models/Appointement';
 
 describe('User resolvers', () => {
   let testClient: createTestClient.SuperTest<createTestClient.Test>;
 
   beforeEach(async () => {
     await createConnection({
-      type: 'postgres',
-      database: 'deafstudy',
+      type: 'sqlite',
+      database: ':memory:',
       dropSchema: true,
-      entities: [User, UserSession],
+      entities: [User, UserSession, Role, Language, Message, Appointement],
       synchronize: true,
       logging: false,
     });
@@ -27,13 +32,12 @@ describe('User resolvers', () => {
   });
 
   describe('query all users', () => {
-    it('return all wilders', async () => {
+    it('return all users', async () => {
       const user1 = User.create({
         firstname: 'Baptiste',
         lastname: 'Gislot',
         email: 'b.g@gmail.com',
         password: 'tototata',
-        roleId: '1',
       });
       await user1.save();
 
@@ -42,7 +46,6 @@ describe('User resolvers', () => {
         lastname: 'Thomassin',
         email: 't.h@gmail.com',
         password: 'tototata',
-        roleId: '1',
       });
       await user2.save();
 
