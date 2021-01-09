@@ -9,8 +9,8 @@ export default class MessageResolver {
   allMessages(@Arg('data') data: ConversationInput): Promise<Message[]> {
     return Message.find({
       where: [
-        { sender_id: data.senderId, receiver_id: data.receiverId },
-        { sender_id: data.receiverId, receiver_id: data.senderId },
+        { sender: data.senderId, receiver: data.receiverId },
+        { sender: data.receiverId, receiver: data.senderId },
       ],
     });
   }
@@ -30,12 +30,12 @@ export default class MessageResolver {
     throw new Error('Sender or Receiver unknown.');
   }
 
-  @Mutation(() => Message)
-  async deleteMessage(@Arg('id') id: string): Promise<Message> {
+  @Mutation(() => String)
+  async deleteMessage(@Arg('id') id: string): Promise<string> {
     const deletedMessage = await Message.findOne(id);
     if (deletedMessage) {
       await Message.remove(deletedMessage);
-      return deletedMessage;
+      return 'Message deleted with success.';
     }
     throw new Error('Message not found.');
   }
