@@ -61,17 +61,33 @@ INPUT ICONS
   cursor: pointer;
   font-size: 1.5rem;
   list-style-type: none;
+  border-top: 1px solid #f2f2f2;
 }
 
-.Navbar-list-item {
+.Navbar-list-itemBlock {
   margin-top: 4rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   width: 100%;
 }
 
-.Navbar-list-item a {
+.Navbar-list-item {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+}
+
+.Navbar-list-item:hover .Navbar-list-item-icon,
+.Navbar-list-item:hover .Navbar-list-item-name {
+  color: #0e1c33;
+  font-weight: normal;
+}
+
+.Navbar-list-item-selected {
+  color: red;
+}
+
+.Navbar-list-item-icon {
   width: 20px;
   height: 15px;
   color: #868c9f;
@@ -79,16 +95,17 @@ INPUT ICONS
 }
 
 .Navbar-list-item-name {
-  margin-left: 1rem;
-  opacity: 0;
-  -webkit-transition: all ease-in 0.2s;
-  transition: all ease-in 0.2s;
+  display: block;
   font-family: "Nunito Sans", sans-serif;
   color: #868c9f;
   text-decoration: none;
+  opacity: 0;
+  margin-left: 1rem;
+  width: 0;
+  height: 0;
 }
 
 .Navbar-list-item-name:hover {
-  font-weight: 600;
+  opacity: 1;
 }
 /*# sourceMappingURL=navbar.css.map */

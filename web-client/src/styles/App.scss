@@ -20,7 +20,7 @@
     flex-basis: 6%;
     min-width: 4rem;
     padding: 0 1rem;
-    transition: all ease-out 0.3s;
+    transition: all ease-in-out 0.3s;
     background-color: $white;
     @include NavbarRadius;
     //Navbar expanded menu
@@ -28,10 +28,13 @@
       flex-basis: 15%;
 
       .Navbar-list-item {
-        transition: all ease-in-out 0.1s;
+        transition: all ease-in-out 0.5s;
+        justify-content: start;
+        color: $dark;
       }
       .Navbar-list-item-name {
         opacity: 1;
+        transition: all ease-in-out 0.5s;
       }
     }
     // border-radius workaround

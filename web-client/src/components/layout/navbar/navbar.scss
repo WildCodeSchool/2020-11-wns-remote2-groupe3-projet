@@ -19,25 +19,45 @@
     cursor: pointer;
     font-size: 1.5rem;
     list-style-type: none;
-    &-item {
+    border-top: 1px solid $lightgrey;
+    &-itemBlock {
       margin-top: 4rem;
-      display: flex;
       width: 100%;
-      a {
-        @include NavbarIcons;
+    }
+
+    &-item {
+      width: 100%;
+      display: flex;
+      color: black;
+
+      &:hover {
+        .Navbar-list-item-icon,
+        .Navbar-list-item-name {
+          color: $dark;
+          font-weight: normal;
+        }
+      }
+
+      &-selected {
+        color: red;
       }
     }
 
+    &-item-icon {
+      @include NavbarIcons;
+    }
+
     &-item-name {
-      margin-left: 1rem;
-      opacity: 0;
-      transition: all ease-in 0.2s;
+      display: block;
       font-family: $nunito;
       color: $Gray;
       text-decoration: none;
-
+      opacity: 0;
+      margin-left: 1rem;
+      width: 0;
+      height: 0;
       &:hover {
-        font-weight: 600;
+        opacity: 1;
       }
     }
   }
