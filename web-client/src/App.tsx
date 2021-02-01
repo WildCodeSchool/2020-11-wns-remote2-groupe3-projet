@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Interpretes from './pages/Interpretes/Interpretes';
 import NavBar from './components/layout/navbar/NavBar';
 import Dashboard from './components/layout/dashboard/Dashboard';
-import Overview from './pages/Overview';
+import Overview from './pages/Interpretes/Interpretes';
 import History from './pages/History';
 import Messages from './pages/Messages';
 import Settings from './pages/Settings';

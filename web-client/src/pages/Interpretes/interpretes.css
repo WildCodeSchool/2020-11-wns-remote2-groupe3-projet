@@ -273,11 +273,13 @@ INPUT ICONS
   background: #ffffff 0% 0% no-repeat padding-box;
   -webkit-box-shadow: 0px 3px 15px #868c9f1d;
           box-shadow: 0px 3px 15px #868c9f1d;
-  border-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .interpretesPage .interpretes-photo {
-  border-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   -o-object-fit: contain;
      object-fit: contain;
   min-width: 100%;
