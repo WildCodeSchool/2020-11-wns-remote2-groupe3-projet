@@ -5,89 +5,10 @@ import Rater from 'react-rater';
 import 'react-rater/lib/react-rater.css';
 import { RiMenu5Fill } from 'react-icons/ri';
 import gsap from 'gsap';
+import { gql, useQuery } from '@apollo/client';
 
 // FAKE DATA
 const interpretes = [
-  {
-    name: 'Julia Anne',
-    note: 4,
-    notices: 10,
-    city: 'Orléans , France',
-    langues: ['lsb', 'asl'],
-    photo: 'https://randomuser.me/api/portraits/women/43.jpg',
-  },
-  {
-    name: 'Julia Anne',
-    note: 5,
-    notices: 10,
-    city: 'Orléans , France',
-    langues: ['lsb', 'asl', 'bsl'],
-    photo: 'https://randomuser.me/api/portraits/women/23.jpg',
-  },
-  {
-    name: 'Julia Anne',
-    note: 3,
-    notices: 10,
-    city: 'Orléans , France',
-    langues: ['lsb', 'bsl'],
-    photo: 'https://randomuser.me/api/portraits/women/33.jpg',
-  },
-  {
-    name: 'Julia Anne',
-    note: 4,
-    notices: 10,
-    city: 'Orléans , France',
-    langues: ['lsb', 'asl'],
-    photo: 'https://randomuser.me/api/portraits/women/43.jpg',
-  },
-  {
-    name: 'Julia Anne',
-    note: 5,
-    notices: 10,
-    city: 'Orléans , France',
-    langues: ['lsb', 'asl', 'bsl'],
-    photo: 'https://randomuser.me/api/portraits/women/23.jpg',
-  },
-  {
-    name: 'Julia Anne',
-    note: 3,
-    notices: 10,
-    city: 'Orléans , France',
-    langues: ['lsb', 'bsl'],
-    photo: 'https://randomuser.me/api/portraits/women/33.jpg',
-  },
-  {
-    name: 'Julia Anne',
-    note: 4,
-    notices: 10,
-    city: 'Orléans , France',
-    langues: ['lsb', 'asl'],
-    photo: 'https://randomuser.me/api/portraits/women/43.jpg',
-  },
-  {
-    name: 'Julia Anne',
-    note: 5,
-    notices: 10,
-    city: 'Orléans , France',
-    langues: ['lsb', 'asl', 'bsl'],
-    photo: 'https://randomuser.me/api/portraits/women/23.jpg',
-  },
-  {
-    name: 'Julia Anne',
-    note: 4,
-    notices: 10,
-    city: 'Orléans , France',
-    langues: ['lsb', 'asl'],
-    photo: 'https://randomuser.me/api/portraits/women/43.jpg',
-  },
-  {
-    name: 'Julia Anne',
-    note: 5,
-    notices: 10,
-    city: 'Orléans , France',
-    langues: ['lsb', 'asl', 'bsl'],
-    photo: 'https://randomuser.me/api/portraits/women/23.jpg',
-  },
   {
     name: 'Julia Anne',
     note: 4,
@@ -108,7 +29,6 @@ const interpretes = [
 
 const Interpretes = (): JSX.Element => {
   const [filterIsVisible, setFilterIsVisible] = useState(false);
-
   // animation fadein Formulaire
   useEffect(() => {
     gsap.to('form', {
@@ -118,6 +38,23 @@ const Interpretes = (): JSX.Element => {
       ease: 'expo.inOut',
     });
   }, [filterIsVisible]);
+
+  const GET_USERS = gql`
+    {
+      users {
+        id
+        firstname
+        lastname
+        email
+      }
+    }
+  `;
+
+  useEffect(() => {
+    console.log('yo');
+    // const data = useQuery(GET_USERS);
+    // console.log(data);
+  }, []);
 
   return (
     <section className="interpretesPage">
