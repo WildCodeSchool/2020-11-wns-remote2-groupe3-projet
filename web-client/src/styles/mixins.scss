@@ -1,0 +1,141 @@
+@import './variables.scss';
+
+/******************
+BREAKPOINTS
+ ******************/
+
+$breakpoints: (
+  'phone': 400px,
+  'phone-wide': 480px,
+  'phablet': 560px,
+  'tablet-small': 640px,
+  'tablet': 768px,
+  'tablet-wide': 1024px,
+  'desktop': 1248px,
+  'desktop-wide': 1440px,
+);
+
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+/******************
+COMMONS
+ ******************/
+
+@mixin BorderRadius {
+  border-radius: 20px;
+}
+
+/******************
+NAVBAR
+ ******************/
+@mixin NavbarIcons {
+  width: 20px;
+  height: 15px;
+  color: $Gray;
+  outline: none;
+}
+
+@mixin NavbarItem {
+  font-size: $navbarFontSize;
+  color: $Gray;
+}
+
+@mixin ActiveNavbarItem {
+  @include NavbarItem;
+  color: $navbarBlack;
+}
+
+@mixin NavbarRadius {
+  box-shadow: 2px 0px 20px #232f5500;
+  border-radius: 0px 30px 30px 0px;
+}
+
+/******************
+SEARCH BAR
+ ******************/
+
+@mixin DefaultInput {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: $defaultFontSize;
+  color: $dark;
+}
+
+@mixin DefaultInputPlaceHolder {
+  color: $searchbarGrey;
+  margin-left: 1rem;
+}
+
+@mixin DefaultButtonWithIcon {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 12rem;
+  height: 3rem;
+  background: #e1e6f4;
+  border: none;
+  outline: none;
+  border-radius: 0.8rem;
+  box-shadow: 0px 3px 15px #868c9f1c;
+  font-size: $defaultFontSize;
+  cursor: pointer;
+}
+
+/******************
+FILTERS
+******************/
+
+@mixin FilterLabel {
+  font-size: $filterLabelFontSize;
+  color: $Gray;
+}
+
+@mixin FilterInput {
+  @include DefaultInput;
+  margin-right: unset;
+  margin-top: 0.5rem;
+  width: 20rem;
+  border-radius: 1rem;
+  background-color: $white;
+  font-size: $filterInputFontSize;
+}
+
+/******************
+GRID
+******************/
+
+@mixin Card {
+  width: 14vw;
+  max-width: 22rem;
+  min-width: 15rem;
+  padding: 0.9rem;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 15px #868c9f1d;
+  @include BorderRadius;
+}
+
+@mixin LanguageButton {
+  width: 3rem;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: $blue;
+  border: 2px solid $blue;
+  outline: none;
+  color: $white;
+}

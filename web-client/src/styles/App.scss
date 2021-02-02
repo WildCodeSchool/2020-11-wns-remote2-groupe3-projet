@@ -1,0 +1,58 @@
+// COMMONS
+@import './common.scss';
+@import './mixins.scss';
+@import './variables.scss';
+
+// LAYOUT COMPONENTS
+@import '../components/layout/navbar/navbar.scss';
+@import '../components/layout/dashboard/dashboard.scss';
+
+// PAGE COMPONENTS
+@import '../pages/Interpretes/interpretes.scss';
+
+.App {
+  display: flex;
+  font-family: $nunito;
+  height: 100vh;
+  // NAV
+  .Navbar {
+    position: relative;
+    flex-basis: 6%;
+    min-width: 4rem;
+    padding: 0 1rem;
+    transition: all ease-in-out 0.3s;
+    background-color: $white;
+    @include NavbarRadius;
+    //Navbar expanded menu
+    &:hover {
+      flex-basis: 15%;
+
+      .Navbar-list-item {
+        transition: all ease-in-out 0.5s;
+        justify-content: start;
+        color: $dark;
+      }
+      .Navbar-list-item-name {
+        opacity: 1;
+        transition: all ease-in-out 0.5s;
+      }
+    }
+    // border-radius workaround
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: $lightblue;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      right: 0;
+      padding: 0;
+      z-index: -1;
+    }
+  }
+  //BOARD
+  .Dashboard {
+    flex-grow: 1;
+    background: $lightblue;
+  }
+}

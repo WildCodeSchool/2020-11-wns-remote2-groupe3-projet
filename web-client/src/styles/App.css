@@ -1,0 +1,629 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+/******************
+INPUT ICONS
+ ******************/
+/******************
+BREAKPOINTS
+ ******************/
+/******************
+COMMONS
+ ******************/
+/******************
+NAVBAR
+ ******************/
+/******************
+SEARCH BAR
+ ******************/
+/******************
+FILTERS
+******************/
+/******************
+GRID
+******************/
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+/******************
+INPUT ICONS
+ ******************/
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+/******************
+INPUT ICONS
+ ******************/
+/******************
+BREAKPOINTS
+ ******************/
+/******************
+COMMONS
+ ******************/
+/******************
+NAVBAR
+ ******************/
+/******************
+SEARCH BAR
+ ******************/
+/******************
+FILTERS
+******************/
+/******************
+GRID
+******************/
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+/******************
+INPUT ICONS
+ ******************/
+.Navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  outline: none;
+}
+
+.Navbar-logo {
+  margin: 3rem 0rem;
+}
+
+.Navbar-logo img {
+  max-width: 9vw;
+  width: 100%;
+}
+
+.Navbar-list {
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  list-style-type: none;
+  border-top: 1px solid #f2f2f2;
+}
+
+.Navbar-list-itemBlock {
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.Navbar-list-item {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+}
+
+.Navbar-list-item:hover .Navbar-list-item-icon,
+.Navbar-list-item:hover .Navbar-list-item-name {
+  color: #0e1c33;
+}
+
+.Navbar-list-item-icon {
+  width: 20px;
+  height: 15px;
+  color: #868c9f;
+  outline: none;
+}
+
+.Navbar-list-item-name {
+  display: block;
+  -webkit-transition: all ease-in 0.2s;
+  transition: all ease-in 0.2s;
+  font-family: "Nunito Sans", sans-serif;
+  color: #868c9f;
+  text-decoration: none;
+  opacity: 0;
+  margin-left: 1rem;
+  width: 0;
+  height: 0;
+}
+
+.Navbar-list-item-name:hover {
+  opacity: 1;
+}
+
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+/******************
+INPUT ICONS
+ ******************/
+/******************
+BREAKPOINTS
+ ******************/
+/******************
+COMMONS
+ ******************/
+/******************
+NAVBAR
+ ******************/
+/******************
+SEARCH BAR
+ ******************/
+/******************
+FILTERS
+******************/
+/******************
+GRID
+******************/
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+/******************
+INPUT ICONS
+ ******************/
+.dashboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  background-color: #f3f6ff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: scroll;
+}
+
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+/******************
+INPUT ICONS
+ ******************/
+/******************
+BREAKPOINTS
+ ******************/
+/******************
+COMMONS
+ ******************/
+/******************
+NAVBAR
+ ******************/
+/******************
+SEARCH BAR
+ ******************/
+/******************
+FILTERS
+******************/
+/******************
+GRID
+******************/
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+/******************
+INPUT ICONS
+ ******************/
+.interpretesPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: calc(100% - 10rem);
+  margin: auto;
+}
+
+.interpretesPage .interpretesFilter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 5vh;
+  margin-top: 4rem;
+}
+
+.interpretesPage .interpretesFilter div {
+  display: inline-block;
+}
+
+.interpretesPage .interpretesFilter div,
+.interpretesPage .interpretesFilter form {
+  padding: 0 2vw;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-searchblock .searchbar {
+  width: 30rem;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-searchblock .searchbar input {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-searchblock .searchbar input::-webkit-input-placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-searchblock .searchbar input:-ms-input-placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-searchblock .searchbar input::-ms-input-placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-searchblock .searchbar input::placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-searchblock .filterbutton button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 12rem;
+  height: 3rem;
+  background: #e1e6f4;
+  border: none;
+  outline: none;
+  border-radius: 0.8rem;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock {
+  opacity: 0;
+  margin-top: 2rem;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock label,
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock input,
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock button {
+  display: block;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock label {
+  font-size: 1.5rem;
+  color: #868c9f;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock input {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  margin-right: unset;
+  margin-top: 0.5rem;
+  width: 20rem;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  font-size: 1.6rem;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock input::-webkit-input-placeholder,
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock button::-webkit-input-placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+  color: #0e1c33;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock input:-ms-input-placeholder,
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock button:-ms-input-placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+  color: #0e1c33;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock input::-ms-input-placeholder,
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock button::-ms-input-placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+  color: #0e1c33;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock input::placeholder,
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock button::placeholder {
+  color: #aeb2be;
+  margin-left: 1rem;
+  color: #0e1c33;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 12rem;
+  height: 3rem;
+  background: #e1e6f4;
+  border: none;
+  outline: none;
+  border-radius: 0.8rem;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  width: 20rem;
+  font-size: 1.6rem;
+}
+
+.interpretesPage .interpretesFilter .interpretesFilter-filtersblock button svg {
+  font-size: 1.2rem;
+}
+
+.interpretesPage .interpretes {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 4rem;
+}
+
+.interpretesPage .interpretes-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  row-gap: 5rem;
+  width: calc(100% - 5rem);
+  list-style-type: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.interpretesPage .interpretes-cards {
+  justify-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 14vw;
+  max-width: 22rem;
+  min-width: 15rem;
+  padding: 0.9rem;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1d;
+          box-shadow: 0px 3px 15px #868c9f1d;
+  border-radius: 20px;
+}
+
+.interpretesPage .interpretes-photo {
+  border-radius: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  min-width: 100%;
+}
+
+.interpretesPage .interpretes-nameBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.interpretesPage .interpretes-nameBlock .name {
+  font-size: 1.9rem;
+}
+
+.interpretesPage .interpretes-nameBlock .calendar {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.interpretesPage .interpretes-nameBlock .calendar svg {
+  width: 15px;
+  height: 15px;
+}
+
+.interpretesPage .interpretes-noteBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1.2rem;
+}
+
+.interpretesPage .interpretes-noteBlock .note {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.interpretesPage .interpretes-noteBlock .notices {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.interpretesPage .interpretes-city {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+}
+
+.interpretesPage .interpretes-languageBlock > *:not(:first-child) {
+  margin-left: 0.5rem;
+}
+
+.interpretesPage .interpretes-language {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  width: 3rem;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: #426cb1;
+  border: 2px solid #426cb1;
+  outline: none;
+  color: #ffffff;
+}
+
+.interpretesPage .interpretes-noteBlock, .interpretesPage .interpretes-nameBlock, .interpretesPage .interpretes-city, .interpretesPage .interpretes-languageBlock {
+  padding: 0 1.5rem;
+}
+
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Nunito Sans", sans-serif;
+  height: 100vh;
+}
+
+.App .Navbar {
+  position: relative;
+  -ms-flex-preferred-size: 6%;
+      flex-basis: 6%;
+  min-width: 4rem;
+  padding: 0 1rem;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+  background-color: #ffffff;
+  -webkit-box-shadow: 2px 0px 20px #232f5500;
+          box-shadow: 2px 0px 20px #232f5500;
+  border-radius: 0px 30px 30px 0px;
+}
+
+.App .Navbar:hover {
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+}
+
+.App .Navbar:hover .Navbar-list-item {
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  color: #0e1c33;
+}
+
+.App .Navbar:hover .Navbar-list-item-name {
+  opacity: 1;
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+}
+
+.App .Navbar::before {
+  content: '';
+  position: absolute;
+  background-color: #f3f6ff;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  padding: 0;
+  z-index: -1;
+}
+
+.App .Dashboard {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background: #f3f6ff;
+}
+/*# sourceMappingURL=App.css.map */
