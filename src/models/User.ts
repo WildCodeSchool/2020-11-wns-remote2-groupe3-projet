@@ -6,10 +6,16 @@ import {
   ManyToMany,
   ManyToOne,
   JoinTable,
+  BeforeInsert,
+  OneToMany,
 } from 'typeorm';
 import { ObjectType, Field, ID } from 'type-graphql';
 import Role from './Role';
 import Language from './Language';
+import bcrypt from 'bcrypt';
+import Message from './Message';
+import Appointement from './Appointement';
+import UserSession from './UserSession';
 
 @Entity()
 @ObjectType()
@@ -26,32 +32,65 @@ export default class User extends BaseEntity {
   @Field(() => String)
   lastname!: string;
 
-  @Column()
+  @Column({ unique: true })
   @Field(() => String)
   email!: string;
 
   @Column()
-  @Field(() => String)
   password!: string;
 
-  @ManyToOne(() => Role, (role) => role.role)
-  @Field(() => Role)
+  @ManyToOne(() => Role, (role) => role.users, {
+    cascade: true,
+  })
   role!: Role;
 
   @ManyToMany(() => Language)
   @JoinTable()
-  @Field(() => [Language])
   languages!: Language[];
 
-  @Column()
+  @Column({
+    nullable: true,
+  })
   @Field(() => String)
-  address!: string;
+  address?: string;
 
-  @Column()
+  @Column({
+    nullable: true,
+  })
   @Field(() => String)
-  phone_number!: string;
+  phone_number?: string;
 
-  @Column()
+  @Column({
+    nullable: true,
+  })
   @Field(() => String)
-  picture!: string;
+  picture?: string;
+
+  @OneToMany(() => Message, (message) => message.sender)
+  senderMessages?: Message[];
+
+  @OneToMany(() => Message, (message) => message.receiver)
+  receiverMessages?: Message[];
+
+  @OneToMany(() => Appointement, (appointement) => appointement.user)
+  appointements?: Appointement[];
+
+  @BeforeInsert()
+  async hashPassword(): Promise<void> {
+    this.password = await bcrypt.hash(
+      this.password,
+      Number(process.env.HASH_SALT)
+    );
+  }
 }
+
+export const getUserFromSessionId = async (
+  sessionId: string
+): Promise<User | null> => {
+  const userSession = await UserSession.findOne(
+    { sessionId: sessionId },
+    { relations: ['user'] }
+  );
+  const user = userSession ? userSession.user : null;
+  return user;
+};

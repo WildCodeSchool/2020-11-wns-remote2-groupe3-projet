@@ -27,5 +27,5 @@ export default class Note extends BaseEntity {
   @OneToOne(() => Appointement)
   @JoinColumn()
   @Field(() => Appointement)
-  appointement_id!: Appointement;
+  appointement!: Appointement;
 }

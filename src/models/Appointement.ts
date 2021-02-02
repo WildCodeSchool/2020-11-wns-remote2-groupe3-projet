@@ -3,9 +3,8 @@ import {
   BaseEntity,
   PrimaryGeneratedColumn,
   Column,
-  Timestamp,
-  OneToOne,
   JoinColumn,
+  ManyToOne,
 } from 'typeorm';
 import { Field, ObjectType, ID } from 'type-graphql';
 import User from './User';
@@ -23,11 +22,11 @@ export default class Appointement extends BaseEntity {
 
   @Column('timestamp')
   @Field(() => String)
-  start_at!: Timestamp;
+  start_at!: Date;
 
   @Column('timestamp')
   @Field(() => String)
-  end_at!: Timestamp;
+  end_at!: Date;
 
   @Column({ default: false })
   @Field(() => Boolean)
@@ -41,13 +40,13 @@ export default class Appointement extends BaseEntity {
   @Field(() => String)
   status!: string;
 
-  @OneToOne(() => User)
+  @ManyToOne(() => User)
   @JoinColumn()
   @Field(() => User)
-  user_id!: User;
+  user!: User;
 
-  @OneToOne(() => User)
+  @ManyToOne(() => User)
   @JoinColumn()
   @Field(() => User)
-  interpreter_id!: User;
+  interpreter!: User;
 }
