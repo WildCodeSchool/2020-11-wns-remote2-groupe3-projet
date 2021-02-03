@@ -8,6 +8,7 @@ import Language from '../models/Language';
 import Message from '../models/Message';
 import Note from '../models/Note';
 import Appointement from '../models/Appointement';
+
 describe('User resolvers', () => {
   let testClient: createTestClient.SuperTest<createTestClient.Test>;
   beforeEach(async () => {
@@ -49,7 +50,7 @@ describe('User resolvers', () => {
     return connection.close();
   });
   describe('Query all users', () => {
-    it('Return all users', async () => {
+    it('Returns all users', async () => {
       const response = await testClient.post('/graphql').send({
         query: `{
           users {
@@ -80,7 +81,7 @@ describe('User resolvers', () => {
     });
   });
   describe('Query one specific user', () => {
-    it('Return the user associated to the specified ID', async () => {
+    it('Returns the user associated to the specified ID', async () => {
       const response = await testClient.post('/graphql').send({
         query: `{
           user(id: "2") {
@@ -179,7 +180,7 @@ describe('User resolvers', () => {
         query: `mutation {
           createUser(
             data: {
-              firstname: "Zinédine"
+              firstname: "Zinedine"
               lastname: "Zidane"
               email: "champion@zizou.zz"
               password: "Coup2Boule"
@@ -192,11 +193,11 @@ describe('User resolvers', () => {
           }
         }`,
       });
-      expect(await User.count({})).toEqual(3);
+      expect(await User.count({})).toEqual(2);
       expect(JSON.parse(response.text).data).toEqual({
         createUser: {
           id: '3',
-          firstname: 'Zinédine',
+          firstname: 'Zinedine',
           lastname: 'Zidane',
           email: 'champion@zizou.zz',
         },
@@ -209,7 +210,7 @@ describe('User resolvers', () => {
         query: `mutation {
           updateUserInfo(
             data: {
-              id: "1",
+              id: "1"
               firstname: "Benjamin"
             }
           ) {
