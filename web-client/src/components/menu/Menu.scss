@@ -1,0 +1,49 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.menu {
+  display: inline-flex;
+  list-style-type: none;
+  flex-basis: 5%;
+
+  &-logo {
+    flex-grow: 1;
+    img {
+      max-width: 10rem;
+      width: 8vw;
+      min-width: 8rem;
+    }
+  }
+
+  &-signup {
+    flex-basis: 20%;
+    display: flex;
+    justify-content: flex-end;
+
+    &-block {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+
+      a {
+        align-self: center;
+      }
+    }
+
+    &-text {
+      font-size: 1.2rem;
+      align-self: center;
+      white-space: nowrap;
+    }
+
+    &-button {
+      @include DefaultInput;
+      padding-left: 0;
+      margin-right: 0;
+      width: 15rem;
+      align-self: center;
+      cursor: pointer;
+      margin: 0 1rem;
+    }
+  }
+}

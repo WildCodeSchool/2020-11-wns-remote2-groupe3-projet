@@ -54,3 +54,31 @@ export interface GetBookDetailsVariables {
 //==============================================================
 // END Enums and Input Objects
 //==============================================================
+
+
+// ====================================================
+// User Login
+// ====================================================
+export default interface IUserLogin {
+  username: string;
+  password: string;
+}
+
+
+// ====================================================
+// User SignUp
+// ====================================================
+
+  type UserSignUpForm = {
+  firstname: string;
+  lastname: string;
+  email: string;
+  password: string;
+    roleId: string;
+    languagesId: string;
+  adress: string;
+  phone_number: string;
+  picture: string;
+  }
+
+ 

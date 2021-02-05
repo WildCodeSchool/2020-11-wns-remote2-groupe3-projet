@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import './login.scss';
-import Logo from '../../assets/images/logo.png';
+import Menu from '../../components/menu/Menu';
 import { FcGoogle } from 'react-icons/fc';
 import { RiFacebookFill } from 'react-icons/ri';
 import {
@@ -8,18 +8,14 @@ import {
   UnFloatPasswordLabel,
   UnFloatUsernameLabel,
   FloatPasswordLabel,
-} from './animations';
+} from '../../animations/animations';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-
-interface IUserInput {
-  username: string;
-  password: string;
-}
+import IUserLogin from '../../schemaTypes';
 
 const Login = (): JSX.Element => {
-  const { register, handleSubmit, errors, reset } = useForm<IUserInput>();
-  const onSubmit = (data: IUserInput): void => {
+  const { register, handleSubmit, errors, reset } = useForm<IUserLogin>();
+  const onSubmit = (data: IUserLogin): void => {
     console.log('data', data);
     reset();
     RedirectToInterpretes();
@@ -31,17 +27,7 @@ const Login = (): JSX.Element => {
 
   return (
     <section className="login">
-      <ul className="login-menu">
-        <li className="login-logo">
-          <img src={Logo} alt="logo" />
-        </li>
-        <li className="login-signup">
-          <div className="login-signup-block">
-            <span className="login-signup-text"> Dont have an account ?</span>
-            <button className="login-signup-button">Sign Up</button>
-          </div>
-        </li>
-      </ul>
+      <Menu />
       <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
         <h1 className="login-title">Sign In</h1>
         <div className="login-fields">

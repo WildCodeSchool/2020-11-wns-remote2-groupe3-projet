@@ -1,0 +1,68 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.signup {
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $lightblue;
+
+  .menu {
+    width: 100%;
+  }
+
+  .signup-form {
+    @include FormContainer;
+  }
+
+  &-title {
+    @include FormTitle;
+  }
+  &-fields {
+    @include InputField;
+  }
+
+  &-upload {
+    margin-top: 2rem;
+
+    label {
+      display: inline-block;
+      color: #868c9f;
+      opacity: 0.6;
+    }
+
+    // hide previous input file
+    .fileInput::-webkit-file-upload-button {
+      visibility: hidden;
+
+      // TODO : input file
+      &::before {
+        content: 'Upload';
+        display: inline-block;
+        background: red;
+        border: 1px solid black;
+        border-radius: 3px;
+        padding: 5px 8px;
+        outline: none;
+        white-space: nowrap;
+        -webkit-user-select: none;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+    }
+
+    .fileInput:hover::before {
+      border-color: black;
+    }
+    .fileInput:active::before {
+      background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+    }
+  }
+
+  &-submit {
+    @include LargeButtonWithoutIcon;
+    margin-top: 2rem;
+  }
+}

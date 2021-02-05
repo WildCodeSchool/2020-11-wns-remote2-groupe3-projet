@@ -1,0 +1,197 @@
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+/******************
+INPUT ICONS
+ ******************/
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+/******************
+INPUT ICONS
+ ******************/
+/******************
+BREAKPOINTS
+ ******************/
+/******************
+COMMONS
+ ******************/
+/******************
+NAVBAR
+ ******************/
+/******************
+SEARCH BAR
+ ******************/
+/******************
+FILTERS
+******************/
+/******************
+GRID
+******************/
+/******************
+Login / SignUp
+******************/
+.signup {
+  width: 100%;
+  padding: 2rem 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #f3f6ff;
+}
+
+.signup .menu {
+  width: 100%;
+}
+
+.signup .signup-form {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 35rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.signup .signup-form * {
+  width: 100%;
+}
+
+.signup-title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: start;
+  margin-bottom: 1rem;
+}
+
+.signup-fields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 2rem;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+  position: relative;
+}
+
+.signup-fields label {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  z-index: 1;
+  font-size: 1rem;
+  color: #868c9f;
+  opacity: 0.6;
+}
+
+.signup-fields input {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  height: 4rem;
+}
+
+.signup-upload {
+  margin-top: 2rem;
+}
+
+.signup-upload label {
+  display: inline-block;
+  color: #868c9f;
+  opacity: 0.6;
+}
+
+.signup-upload .fileInput::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.signup-upload .fileInput::-webkit-file-upload-button::before {
+  content: 'Upload';
+  display: inline-block;
+  background: red;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.signup-upload .fileInput:hover::before {
+  border-color: black;
+}
+
+.signup-upload .fileInput:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.signup-submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  margin-right: 0;
+  padding-left: 0;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+/*# sourceMappingURL=Signup.css.map */
