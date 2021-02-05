@@ -1,0 +1,157 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.login {
+  height: 100vh;
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $lightblue;
+
+  &-menu {
+    display: inline-flex;
+    list-style-type: none;
+    flex-basis: 5%;
+  }
+
+  &-logo {
+    flex-grow: 1;
+    img {
+      max-width: 10rem;
+      width: 8vw;
+      min-width: 8rem;
+    }
+  }
+
+  &-signup {
+    flex-basis: 20%;
+    display: flex;
+    justify-content: flex-end;
+
+    &-block {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      flex-wrap: nowrap;
+    }
+
+    &-text {
+      font-size: 1.2rem;
+      align-self: center;
+    }
+
+    &-button {
+      @include DefaultInput;
+      padding-left: 0;
+      margin-right: 0;
+      width: 15rem;
+      align-self: center;
+    }
+  }
+
+  &-form {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 35rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    * {
+      width: 100%;
+    }
+  }
+
+  &-title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-align: start;
+    margin-bottom: 1rem;
+  }
+  &-fields {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    box-shadow: unset;
+    position: relative;
+
+    label {
+      position: absolute;
+      top: 0;
+      left: 5px;
+      z-index: 1;
+      font-size: 1rem;
+      color: $Gray;
+      opacity: 0.6;
+    }
+    input {
+      @include DefaultInput;
+      height: 4rem;
+    }
+  }
+
+  &-signin,
+  &-facebook,
+  &-google {
+    @include DefaultInput;
+    margin-right: 0;
+    padding-left: 0;
+    cursor: pointer;
+  }
+
+  &-signin {
+    margin: 3rem 0rem;
+    border: 1px solid #f1f1f1;
+  }
+
+  &-separator {
+    position: relative;
+    text-align: center;
+    position: relative;
+    font-size: 1.5rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 50%;
+      width: 40%;
+      border: 0.7px solid black;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 50%;
+      width: 40%;
+      border: 1px solid black;
+    }
+  }
+
+  &-google,
+  &-facebook {
+    margin-top: 2rem;
+  }
+
+  &-google,
+  &-facebook {
+    display: flex;
+    padding: 0 2rem;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      width: 20%;
+      font-size: 2rem;
+    }
+  }
+
+  &-facebook {
+    background-color: $facebookblue;
+    color: $white;
+  }
+}

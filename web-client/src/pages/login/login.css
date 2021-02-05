@@ -1,0 +1,271 @@
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+/******************
+INPUT ICONS
+ ******************/
+/******************
+BREAKPOINTS
+ ******************/
+/******************
+COMMONS
+ ******************/
+/******************
+NAVBAR
+ ******************/
+/******************
+SEARCH BAR
+ ******************/
+/******************
+FILTERS
+******************/
+/******************
+GRID
+******************/
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+/******************
+INPUT ICONS
+ ******************/
+.login {
+  height: 100vh;
+  width: 100%;
+  padding: 2rem 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #f3f6ff;
+}
+
+.login-menu {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  list-style-type: none;
+  -ms-flex-preferred-size: 5%;
+      flex-basis: 5%;
+}
+
+.login-logo {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.login-logo img {
+  max-width: 10rem;
+  width: 8vw;
+  min-width: 8rem;
+}
+
+.login-signup {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.login-signup-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.login-signup-text {
+  font-size: 1.2rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.login-signup-button {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  padding-left: 0;
+  margin-right: 0;
+  width: 15rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.login-form {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 35rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.login-form * {
+  width: 100%;
+}
+
+.login-title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: start;
+  margin-bottom: 1rem;
+}
+
+.login-fields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 2rem;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+  position: relative;
+}
+
+.login-fields label {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  z-index: 1;
+  font-size: 1rem;
+  color: #868c9f;
+  opacity: 0.6;
+}
+
+.login-fields input {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  height: 4rem;
+}
+
+.login-signin, .login-facebook, .login-google {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  margin-right: 0;
+  padding-left: 0;
+  cursor: pointer;
+}
+
+.login-signin {
+  margin: 3rem 0rem;
+  border: 1px solid #f1f1f1;
+}
+
+.login-separator {
+  position: relative;
+  text-align: center;
+  position: relative;
+  font-size: 1.5rem;
+}
+
+.login-separator::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 50%;
+  width: 40%;
+  border: 0.7px solid black;
+}
+
+.login-separator::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 50%;
+  width: 40%;
+  border: 1px solid black;
+}
+
+.login-google, .login-facebook {
+  margin-top: 2rem;
+}
+
+.login-google, .login-facebook {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-google svg, .login-facebook svg {
+  width: 20%;
+  font-size: 2rem;
+}
+
+.login-facebook {
+  background-color: #3b5998;
+  color: #ffffff;
+}
+/*# sourceMappingURL=login.css.map */

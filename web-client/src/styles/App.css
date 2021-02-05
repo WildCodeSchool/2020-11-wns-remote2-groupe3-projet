@@ -138,6 +138,11 @@ INPUT ICONS
 .Navbar-list-item:hover .Navbar-list-item-icon,
 .Navbar-list-item:hover .Navbar-list-item-name {
   color: #0e1c33;
+  font-weight: normal;
+}
+
+.Navbar-list-item-selected {
+  color: red;
 }
 
 .Navbar-list-item-icon {
@@ -149,8 +154,6 @@ INPUT ICONS
 
 .Navbar-list-item-name {
   display: block;
-  -webkit-transition: all ease-in 0.2s;
-  transition: all ease-in 0.2s;
   font-family: "Nunito Sans", sans-serif;
   color: #868c9f;
   text-decoration: none;
@@ -214,6 +217,12 @@ INPUT ICONS
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: scroll;
+}
+
+.dashboard-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 /******************
