@@ -17,7 +17,7 @@ describe('User resolvers', () => {
   beforeEach(async () => {
     await createConnection({
       type: 'postgres',
-      url: 'postgres://postgres:postgres@localhost:5432/deafstudy_test',
+      url: 'postgres://postgres:postgres@localhost:5433/deafstudy_test',
       dropSchema: true,
       synchronize: true,
       logging: false,
