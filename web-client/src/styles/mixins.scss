@@ -172,7 +172,7 @@ Login / SignUp
     left: 5px;
     z-index: 1;
     font-size: 1rem;
-    color: $Gray;
+    color: $dark;
     opacity: 0.6;
   }
   input {
@@ -206,6 +206,8 @@ Login / SignUp
   margin-right: 0;
   padding-left: 0;
   cursor: pointer;
+  width: 70%;
+  height: 3.5rem;
 }
 
 @mixin FormTitle {

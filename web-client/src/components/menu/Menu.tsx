@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import Logo from '../../assets/images/logo.png';
+import { MenuAnimations } from '../../animations/menu';
 
 const Menu = (): JSX.Element => {
+  useEffect(() => {
+    MenuAnimations();
+  }, []);
+
   const location = useLocation();
   const ButtonChange = () => {
     const location = useLocation();
@@ -30,7 +35,9 @@ const Menu = (): JSX.Element => {
   return (
     <ul className="menu">
       <li className="menu-logo">
-        <img src={Logo} alt="logo" />
+        <NavLink to="/">
+          <img src={Logo} alt="logo" />
+        </NavLink>
       </li>
       <li className="menu-signup">{ButtonChange()}</li>
     </ul>

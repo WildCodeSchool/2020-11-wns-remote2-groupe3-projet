@@ -74,8 +74,8 @@ export default interface IUserLogin {
   lastname: string;
   email: string;
   password: string;
-    roleId: string;
-    languagesId: string;
+  roleId: string;
+  languagesId: string;
   adress: string;
   phone_number: string;
   picture: string;
