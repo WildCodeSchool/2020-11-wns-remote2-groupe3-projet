@@ -8,7 +8,6 @@ const ProtectedRoute: React.FC<{
   exact: boolean;
   isLoggedIn: boolean;
 }> = ({ isLoggedIn, path, component, exact }) => {
-  console.log(isLoggedIn, path, component, exact);
   return isLoggedIn === true ? (
     <Route path={path} exact={exact} component={component} />
   ) : (

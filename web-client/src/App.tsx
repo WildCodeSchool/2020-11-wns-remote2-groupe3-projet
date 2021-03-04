@@ -25,8 +25,12 @@ const App = (): JSX.Element => {
           <Route exact path="/">
             <Redirect to="/login" />
           </Route>
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={SignUp} />
+          <Route path="/login" component={Login}>
+            {isLoggedIn === false ? <Login /> : <Redirect to="/interpretes" />}
+          </Route>
+          <Route path="/signup" component={SignUp}>
+            {isLoggedIn === false ? <SignUp /> : <Redirect to="/interpretes" />}
+          </Route>
           <Dashboard>
             <ProtectedRoute
               path="/overview"

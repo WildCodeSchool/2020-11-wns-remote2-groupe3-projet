@@ -18,6 +18,7 @@ import { useMutation } from '@apollo/client';
 import { CreateUserInput, User } from '../../types/types';
 import { CREATE_USER } from '../../mutations/mutations';
 import { LoginContext } from '../../Context/LoginContext';
+import Loader from '../../components/loader/Loader';
 
 const SignUpForm = (): JSX.Element => {
   const [hasErrors, setHasErrors] = useState(false);
@@ -29,22 +30,24 @@ const SignUpForm = (): JSX.Element => {
     setHasErrors(true);
     reset();
   };
-  const onSubmit = (data: User) => {
+  const onSubmit = async (data: User) => {
+    setIsLoading(true);
     if (data != null || undefined) {
       try {
         console.log(data);
-        const newUser = createUser({
+        const newUser = await createUser({
           variables: {
             data,
           },
         });
-        reset();
-        //RedirectToInterpretes();
-        return newUser;
+        if (newUser) {
+          setIsLoggedIn(true);
+          return newUser;
+        }
       } catch (error) {
-        console.log(error);
+        handleInvalidFields();
       } finally {
-        console.log('finnaly');
+        setIsLoading(false);
       }
     }
   };
@@ -147,9 +150,18 @@ const SignUpForm = (): JSX.Element => {
             autoComplete="off"
           />
         </div>
-        <button type="submit" className="signup-submit submit">
-          Comfirm
-        </button>
+        {hasErrors && (
+          <div className={`error has-error `}>
+            An error occured. Please retry.
+          </div>
+        )}
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <button type="submit" className="signup-submit submit">
+            Comfirm
+          </button>
+        )}
       </form>
     </>
   );
