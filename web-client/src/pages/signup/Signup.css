@@ -50,6 +50,7 @@ Login / SignUp
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #f3f6ff;
+  opacity: 0;
 }
 
 .signup .menu {
@@ -109,7 +110,7 @@ Login / SignUp
   left: 5px;
   z-index: 1;
   font-size: 1rem;
-  color: #868c9f;
+  color: #0e1c33;
   opacity: 0.6;
 }
 
@@ -131,35 +132,50 @@ Login / SignUp
 
 .signup-upload {
   margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.signup-upload label {
-  display: inline-block;
-  color: #868c9f;
-  opacity: 0.6;
+.signup-upload .fileInput {
+  color: transparent;
+  position: relative;
+  outline: none;
+  width: 80%;
+  margin: 0 auto;
+  visibility: hidden;
 }
 
 .signup-upload .fileInput::-webkit-file-upload-button {
   visibility: hidden;
 }
 
-.signup-upload .fileInput::-webkit-file-upload-button::before {
-  content: 'Upload';
-  display: inline-block;
-  background: red;
-  border: 1px solid black;
-  border-radius: 3px;
-  padding: 5px 8px;
-  outline: none;
+.signup-upload .fileInput::before {
+  content: 'Upload Picture';
+  color: #ffffff;
+  display: block;
   white-space: nowrap;
-  -webkit-user-select: none;
   cursor: pointer;
-  font-weight: 700;
-  font-size: 1.2rem;
+  background: #3b5998;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 0;
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  outline: none;
+  font-weight: 600;
 }
 
 .signup-upload .fileInput:hover::before {
   border-color: black;
+}
+
+.signup-upload .fileInput:active {
+  outline: 0;
 }
 
 .signup-upload .fileInput:active::before {
@@ -192,6 +208,20 @@ Login / SignUp
   margin-right: 0;
   padding-left: 0;
   cursor: pointer;
+  width: 70%;
+  height: 3.5rem;
   margin-top: 2rem;
+  width: 70% !important;
+  border: 1px solid #f1f1f1;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+  -webkit-box-shadow: 2px 0px 20px #232f5500;
+          box-shadow: 2px 0px 20px #232f5500;
+}
+
+.signup-submit:hover, .signup-submit:focus {
+  opacity: 0.7;
+  background-color: #4e69a2;
+  color: #ffffff;
 }
 /*# sourceMappingURL=Signup.css.map */

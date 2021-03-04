@@ -78,8 +78,6 @@ INPUT ICONS
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 100%;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
 }
 
 .menu-signup-block a {
@@ -93,6 +91,7 @@ INPUT ICONS
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  white-space: nowrap;
 }
 
 .menu-signup-button {
@@ -115,5 +114,6 @@ INPUT ICONS
       -ms-grid-row-align: center;
       align-self: center;
   cursor: pointer;
+  margin: 0 1rem;
 }
 /*# sourceMappingURL=Menu.css.map */
