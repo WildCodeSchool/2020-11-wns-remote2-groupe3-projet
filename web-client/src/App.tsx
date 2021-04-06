@@ -1,4 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react';
+// TODO: fix setISloggedIn value form child components
+
+import React, { useContext, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Interpretes from './pages/Interpretes/Interpretes';
 import Dashboard from './components/layout/dashboard/Dashboard';
@@ -15,9 +17,6 @@ import ProtectedRoute from './components/routes/ProtectedRoute';
 const App = (): JSX.Element => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
-  useEffect(() => {
-    console.log(isLoggedIn);
-  }, [isLoggedIn]);
   return (
     <LoginContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
       <div className="App">
@@ -31,6 +30,7 @@ const App = (): JSX.Element => {
           <Route path="/signup" component={SignUp}>
             {isLoggedIn === false ? <SignUp /> : <Redirect to="/interpretes" />}
           </Route>
+
           <Dashboard>
             <ProtectedRoute
               path="/overview"

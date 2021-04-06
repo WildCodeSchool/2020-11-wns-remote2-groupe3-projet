@@ -3,14 +3,6 @@ import { TimelineLite } from 'gsap/all';
 //  /* LOGIN / SIGN UP */
 
 // USERNAME, FIRSTNAME LABEL
-export const testi = (el: string): void => {
-  gsap.to(el, {
-    duration: 1,
-    opacity: 1,
-    y: -15,
-    ease: 'expo.inOut',
-  });
-};
 
 export const FloatUserNameLabel = (): void => {
   gsap.to('.username, .firstname', {
