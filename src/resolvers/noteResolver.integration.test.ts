@@ -1,36 +1,15 @@
-import createTestClient from 'supertest';
-import { createConnection, getConnection } from 'typeorm';
-import { getExpressServer } from '../express-server';
+import { getConnection } from 'typeorm';
+
 import Note from '../models/Note';
 import User from '../models/User';
-import Role from '../models/Role';
-import Language from '../models/Language';
-import Message from '../models/Message';
 import Appointement from '../models/Appointement';
-import UserSession from '../models/UserSession';
+
+import initializeTestClient from '../services/InitializeTestClient';
 
 describe('Note resolvers', () => {
-  let testClient: createTestClient.SuperTest<createTestClient.Test>;
+  let testClient: any;
   beforeEach(async () => {
-    await createConnection({
-      type: 'postgres',
-      url: 'postgres://postgres:postgres@localhost:5432/deafstudy_test',
-      dropSchema: true,
-      synchronize: true,
-      logging: false,
-      entities: [
-        User,
-        Note,
-        Role,
-        Language,
-        Message,
-        Appointement,
-        UserSession,
-      ],
-    });
-
-    const { expressServer } = await getExpressServer();
-    testClient = createTestClient(expressServer);
+    testClient = await initializeTestClient();
 
     const user1 = User.create({
       firstname: 'Baptiste',
