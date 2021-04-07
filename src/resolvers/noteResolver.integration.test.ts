@@ -119,4 +119,59 @@ describe('Note resolvers', () => {
       });
     });
   });
+
+  describe('Query one specific note', () => {
+    it('Returns the note associated to the specified ID', async () => {
+      const response = await testClient.post('/graphql').send({
+        query: `{
+          note(id: "1") {
+            id
+            note
+            comment
+          }
+        }`,
+      });
+      expect(JSON.parse(response.text).data).toEqual({
+        note: {
+          id: '1',
+          note: 5,
+          comment: "C'était cool !",
+        },
+      });
+    });
+  });
+
+  describe('Mutation createNote', () => {
+    it('Creates a note', async () => {
+      const response = await testClient.post('/graphql').send({
+        query: `mutation {
+          createNote(
+            note: 4
+            comment: "Top !"
+          ){
+            id
+            note
+            comment
+          }
+        }`,
+      });
+      expect(JSON.parse(response.text).data).toEqual({});
+    });
+  });
+
+  describe('Mutation deleteNote', () => {
+    it('Delete the specified note.', async () => {
+      const response = await testClient.post('/graphql').send({
+        query: `mutation {
+          deleteNote(
+            id: "2"
+          )
+        }`,
+      });
+      expect(await Note.count({})).toEqual(1);
+      expect(JSON.parse(response.text).data).toEqual({
+        deleteNote: 'The specified note has been removed.',
+      });
+    });
+  });
 });

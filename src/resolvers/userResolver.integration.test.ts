@@ -1,13 +1,13 @@
 import createTestClient from 'supertest';
 import { createConnection, getConnection } from 'typeorm';
 import { getExpressServer } from '../express-server';
-import UserSession from '../models/UserSession';
 import User from '../models/User';
 import Role from '../models/Role';
 import Language from '../models/Language';
 import Message from '../models/Message';
 import Note from '../models/Note';
 import Appointement from '../models/Appointement';
+import UserSession from '../models/UserSession';
 
 describe('User resolvers', () => {
   let testClient: createTestClient.SuperTest<createTestClient.Test>;
