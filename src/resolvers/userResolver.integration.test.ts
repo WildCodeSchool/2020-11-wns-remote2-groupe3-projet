@@ -4,11 +4,13 @@ import Role from '../models/Role';
 import Language from '../models/Language';
 import UserSession from '../models/UserSession';
 import initializeTestClient from '../services/InitializeTestClient';
+import createTestClient from 'supertest';
 
 describe('User resolvers', () => {
-  let testClient: any;
+  let testClient: createTestClient.SuperTest<createTestClient.Test>;
   beforeEach(async () => {
     testClient = await initializeTestClient();
+
     const user1 = User.create({
       firstname: 'Baptiste',
       lastname: 'Gislot',

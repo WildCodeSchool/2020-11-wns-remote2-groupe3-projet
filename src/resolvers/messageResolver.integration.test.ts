@@ -1,12 +1,12 @@
 import { getConnection } from 'typeorm';
-
+import createTestClient from 'supertest';
 import User from '../models/User';
 import Message from '../models/Message';
 
 import initializeTestClient from '../services/InitializeTestClient';
 
 describe('User resolvers', () => {
-  let testClient: any;
+  let testClient: Promise<createTestClient.SuperTest<createTestClient.Test>>;
 
   beforeEach(async () => {
     testClient = await initializeTestClient();

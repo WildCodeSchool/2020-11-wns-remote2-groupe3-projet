@@ -9,7 +9,9 @@ import Appointement from '../models/Appointement';
 import UserSession from '../models/UserSession';
 import createTestClient from 'supertest';
 
-const initializeTestClient = async () => {
+const initializeTestClient = async (): Promise<
+  createTestClient.SuperTest<createTestClient.Test>
+> => {
   await createConnection({
     type: 'postgres',
     url: 'postgres://postgres:postgres@localhost:5432/deafstudy_test',
