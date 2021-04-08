@@ -30,11 +30,11 @@ export default class NoteResolver {
   }
 
   @Mutation(() => Note)
-  async deletedNote(@Arg('id') id: string): Promise<string> {
+  async deleteNote(@Arg('id') id: string): Promise<string> {
     const deletedNote = await Note.findOne(id);
     if (deletedNote) {
       await Note.remove(deletedNote);
-      return 'deletedNote';
+      return 'The specified note has been removed.';
     }
     throw new Error('Note not found');
   }

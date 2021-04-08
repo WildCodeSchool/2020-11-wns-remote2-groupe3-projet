@@ -35,7 +35,7 @@ export default class UserResolver {
   @Mutation(() => User)
   async createUser(@Arg('data') data: CreateUserInput): Promise<User> {
     const user = User.create(data);
-    const role = await Role.findOne(data.roleId);
+    const role = await Role.findOneOrFail(data.roleId);
     if (user) {
       if (role) {
         user.role = role;
