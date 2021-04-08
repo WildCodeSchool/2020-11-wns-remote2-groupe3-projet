@@ -1,0 +1,125 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.profilPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .profil {
+    height: 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    .profil-photo-block {
+      display: flex;
+
+      .user {
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 1.3rem;
+      }
+      .photo {
+        height: 5rem;
+        border-radius: 50%;
+      }
+    }
+
+    .profil-menu-block {
+      display: flex;
+      margin-top: 2rem;
+
+      .menu {
+        list-style-type: none;
+        flex-basis: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .menu-photo {
+        height: 6rem;
+        border-radius: 50%;
+        border: 0.1rem solid blue;
+      }
+      .menu-buttons {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        .menu-upload,
+        .menu-delete {
+          @include DefaultInput;
+          margin-right: 0;
+          padding-left: 0;
+          width: 6rem;
+          border-radius: 0.5rem;
+        }
+        .menu-upload {
+          margin: 1.5rem;
+        }
+      }
+    }
+    .name-block {
+      display: flex;
+      justify-content: space-between;
+      //margin-bottom: 2rem;
+      .firstname,
+      .lastname {
+        margin-top: 2rem;
+        flex-basis: 33%;
+        display: flex;
+        flex-direction: column;
+      }
+      .firstname {
+        margin-left: 30%;
+      }
+      .input-firstname,
+      .input-lastname {
+        @include DefaultInput;
+      }
+    }
+    .username {
+      margin-top: 2rem;
+      margin-left: 30%;
+
+      .input-username {
+        @include DefaultInput;
+      }
+    }
+
+    .email {
+      margin-top: 2rem;
+      margin-left: 30%;
+    }
+    .input-mail {
+      @include DefaultInput;
+    }
+    .languages {
+      margin-top: 2rem;
+      margin-left: 30%;
+    }
+    .input-languages {
+      @include DefaultInput;
+    }
+
+    .button-save {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      flex-grow: 1;
+      .save {
+        @include DefaultInput;
+        margin-right: 0;
+        padding-left: 0;
+        width: 6rem;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}
