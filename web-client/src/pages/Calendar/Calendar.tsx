@@ -44,22 +44,25 @@ const Calendar = (): JSX.Element => {
   };
 
   const formatEvents = () => {
-    const events = data.appointements;
-    if (events) {
-      console.log('events', events);
-      return events.map((appointment: Appointement) => {
-        const { title, end_at, start_at } = appointment;
-        const endTime = new Date(parseInt(end_at));
-        const startTime = new Date(parseInt(start_at));
-        console.log(startTime);
-        return {
-          title,
-          start: startTime,
-          end: endTime,
-          extendedProps: { ...appointment },
-        };
-      });
+    if (data) {
+      console.log('events', data);
+      getDateFromTimestamp();
     }
+  };
+
+  const getDateFromTimestamp = () => {
+    const events = data.appointements;
+    return events.map((appointment: Appointement) => {
+      const { title, end_at, start_at } = appointment;
+      const endTime = new Date(parseInt(end_at));
+      const startTime = new Date(parseInt(start_at));
+      return {
+        title,
+        start: startTime,
+        end: endTime,
+        extendedProps: { ...appointment },
+      };
+    });
   };
 
   if (loading) return <div>Loading ...</div>;
@@ -77,7 +80,7 @@ const Calendar = (): JSX.Element => {
         dateClick={handleDateClick}
         displayEventTime={true}
         selectable={true}
-        events={formatEvents()}
+        events={getDateFromTimestamp()}
         // header={{
         //   left: 'prev,next',
         //   center: 'title',

@@ -20,7 +20,6 @@ export const getApolloServer = async (): Promise<ApolloServer> => {
       NoteResolver,
       MessageResolver,
     ],
-    dateScalarMode: 'isoDate',
   });
 
   const context = async ({ req, res }: { req: Request; res: Response }) => {
