@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { gql, useQuery } from '@apollo/client';
 import './calendar.scss';
-import moment from 'moment';
 
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
-import { start } from 'repl';
 
 type Appointement = {
   title: string;
@@ -68,14 +66,23 @@ const Calendar = (): JSX.Element => {
 
   return (
     <div className="CalendarPage">
+      <div className="CalendarPage-header">
+        <h1 className="CalendarPage-header-title">Calendar</h1>
+      </div>
+
       <FullCalendar
-        plugins={[dayGridPlugin, listPlugin]}
+        plugins={[dayGridPlugin, listPlugin, timeGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
         weekends={false}
         dateClick={handleDateClick}
         displayEventTime={true}
         selectable={true}
         events={formatEvents()}
+        // header={{
+        //   left: 'prev,next',
+        //   center: 'title',
+        //   right: 'dayGridMonth,timeGridWeek,timeGridDay',
+        // }}
       />
     </div>
   );
