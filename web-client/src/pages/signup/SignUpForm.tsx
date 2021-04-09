@@ -32,9 +32,8 @@ const SignUpForm = (): JSX.Element => {
   };
   const onSubmit = async (data: User) => {
     setIsLoading(true);
-    if (data != null || undefined) {
+    if (data) {
       try {
-        console.log(data);
         const newUser = await createUser({
           variables: {
             data,
@@ -121,7 +120,7 @@ const SignUpForm = (): JSX.Element => {
           <input
             type="text"
             name="adress"
-            ref={register({ maxLength: 20, required: false })}
+            ref={register({ maxLength: 80, required: false })}
             onFocus={FloatAddressLabel}
             onBlur={UnFloatAddressLabel}
             autoComplete="off"
@@ -130,9 +129,9 @@ const SignUpForm = (): JSX.Element => {
         <div className="signup-fields phone-block">
           <label className="phone">Phone</label>
           <input
-            type="number"
+            type="tel"
             name="phone_number"
-            ref={register({ maxLength: 10, required: false })}
+            ref={register({ required: false })}
             onFocus={FloatPhoneLabel}
             onBlur={UnFloatPhoneLabel}
             autoComplete="off"

@@ -9,7 +9,7 @@ const ProtectedRoute: React.FC<{
   exact: boolean;
   isLoggedIn: boolean;
 }> = ({ isLoggedIn, path, component, exact }) => {
-  return isLoggedIn === true ? (
+  return isLoggedIn ? (
     <Route path={path} exact={exact} component={component} />
   ) : (
     <Redirect to="/login" />
