@@ -1,0 +1,82 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.CalendarPage {
+  // height: 100%;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-family: $nunito;
+
+  &-header {
+    &-title {
+      font-size: 2.3rem;
+    }
+  }
+
+  // FullCalendar Main
+  .fc {
+    max-width: 100rem;
+    width: 80vw;
+    margin: 0 auto;
+    table {
+      font-size: 1.2em;
+    }
+
+    margin-top: 4rem;
+
+    &-header-toolbar {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .fc-toolbar-chunk {
+        .fc-today-button {
+          font-size: 1rem;
+        }
+        .fc-button {
+          border-radius: 3rem;
+        }
+        .fc-prev-button,
+        .fc-next-button {
+          outline: none;
+          border: none;
+        }
+        .fc-prev-button {
+          background: $blue;
+        }
+        .fc-next-button {
+          background: $blue;
+          margin-left: 0.4rem !important;
+        }
+      }
+    }
+
+    &-view-harness {
+      //background: lightgray;
+      //height: 90vh;
+    }
+
+    .fc-col-header {
+      height: 3rem;
+
+      .fc-scrollgrid-sync-inner {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .fc-col-header-cell-cushion {
+          font-size: 1.2rem;
+          font-weight: lighter;
+        }
+      }
+    }
+
+    .fc-day-today {
+      background: $calendar-today !important;
+    }
+  }
+}

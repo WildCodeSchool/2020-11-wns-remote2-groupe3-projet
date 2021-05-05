@@ -9,4 +9,8 @@
   background-color: $lightblue;
   box-sizing: border-box;
   overflow: scroll;
+
+  &-main {
+    height: 100%;
+  }
 }

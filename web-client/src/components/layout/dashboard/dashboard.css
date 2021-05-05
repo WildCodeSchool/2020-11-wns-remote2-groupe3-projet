@@ -51,4 +51,8 @@ INPUT ICONS
           box-sizing: border-box;
   overflow: scroll;
 }
+
+.dashboard-main {
+  height: 100%;
+}
 /*# sourceMappingURL=dashboard.css.map */

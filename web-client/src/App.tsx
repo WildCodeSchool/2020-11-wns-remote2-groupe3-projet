@@ -4,6 +4,7 @@ import Interpretes from './pages/Interpretes/Interpretes';
 import NavBar from './components/layout/navbar/NavBar';
 import Dashboard from './components/layout/dashboard/Dashboard';
 import Overview from './pages/Overview';
+import Calendar from './pages/Calendar/Calendar';
 import History from './pages/History';
 import Messages from './pages/Messages';
 import Settings from './pages/Settings';
@@ -17,6 +18,7 @@ const App = (): JSX.Element => (
       <Switch>
         <Route exact path="/overview" component={Overview} />
         <Route exact path="/interpretes" component={Interpretes} />
+        <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/history" component={History} />
         <Route exact path="/messages" component={Messages} />
         <Route exact path="/settings" component={Settings} />

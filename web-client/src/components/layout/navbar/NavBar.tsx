@@ -8,6 +8,7 @@ import {
   FiMessageSquare,
   FiSettings,
   FiLogOut,
+  FiCalendar,
 } from 'react-icons/fi';
 import Logo from './logo.png';
 
@@ -21,6 +22,11 @@ const Items = [
     name: 'Interpretes',
     link: '/interpretes',
     icon: <FiUsers />,
+  },
+  {
+    name: 'Calendar',
+    link: '/calendar',
+    icon: <FiCalendar />,
   },
   {
     name: 'History',
