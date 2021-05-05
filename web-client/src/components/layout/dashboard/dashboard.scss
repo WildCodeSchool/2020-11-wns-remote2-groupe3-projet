@@ -7,9 +7,11 @@
   min-height: 100%;
   background-color: $lightblue;
   box-sizing: border-box;
-  overflow: scroll;
+  overflow: hidden;
 
   &-main {
     height: 100%;
+    width: 100%;
+    overflow-y: scroll;
   }
 }

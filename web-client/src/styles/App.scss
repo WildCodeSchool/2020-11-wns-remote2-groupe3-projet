@@ -11,6 +11,10 @@
 // PAGE COMPONENTS
 @import '../pages/Interpretes/interpretes.scss';
 
+html {
+  overflow: hidden;
+}
+
 .App {
   display: flex;
   font-family: $nunito;
