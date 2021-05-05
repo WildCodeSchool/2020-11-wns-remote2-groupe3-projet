@@ -39,10 +39,6 @@ const Calendar = (): JSX.Element => {
     }
   }, [data]);
 
-  const handleDateClick = (arg: any) => {
-    alert(arg.dateStr);
-  };
-
   const formatEvents = () => {
     if (data) {
       console.log('events', data);
@@ -77,15 +73,9 @@ const Calendar = (): JSX.Element => {
         plugins={[dayGridPlugin, listPlugin, timeGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
         weekends={false}
-        dateClick={handleDateClick}
         displayEventTime={true}
         selectable={true}
         events={getDateFromTimestamp()}
-        // header={{
-        //   left: 'prev,next',
-        //   center: 'title',
-        //   right: 'dayGridMonth,timeGridWeek,timeGridDay',
-        // }}
       />
     </div>
   );
