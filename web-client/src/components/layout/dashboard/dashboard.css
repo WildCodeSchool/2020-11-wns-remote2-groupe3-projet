@@ -54,4 +54,8 @@ INPUT ICONS
   width: 100%;
   overflow: scroll;
 }
+
+.dashboard-main {
+  height: 100%;
+}
 /*# sourceMappingURL=dashboard.css.map */

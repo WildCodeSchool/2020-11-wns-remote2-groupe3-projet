@@ -5,6 +5,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import Interpretes from './pages/Interpretes/Interpretes';
 import Dashboard from './components/layout/dashboard/Dashboard';
 import Overview from './pages/Overview';
+import Calendar from './pages/Calendar/Calendar';
 import History from './pages/History';
 import Messages from './pages/Messages';
 import Settings from './pages/Settings';
@@ -47,6 +48,12 @@ const App = (): JSX.Element => {
             <ProtectedRoute
               path="/history"
               component={History}
+              isLoggedIn={isLoggedIn}
+              exact
+            />
+            <ProtectedRoute
+              path="/history"
+              component={Calendar}
               isLoggedIn={isLoggedIn}
               exact
             />

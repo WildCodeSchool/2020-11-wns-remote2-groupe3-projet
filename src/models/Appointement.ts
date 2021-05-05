@@ -21,11 +21,11 @@ export default class Appointement extends BaseEntity {
   title!: string;
 
   @Column('timestamp')
-  @Field(() => String)
+  @Field()
   start_at!: Date;
 
   @Column('timestamp')
-  @Field(() => String)
+  @Field()
   end_at!: Date;
 
   @Column({ default: false })
