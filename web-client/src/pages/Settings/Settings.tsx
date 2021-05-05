@@ -1,19 +1,17 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import '../Settings/settings.scss';
 
-const profil = [
-  {
-    firstname: 'helena',
-    lastname: 'thomassin',
-    photo: 'https://randomuser.me/api/portraits/women/43.jpg',
-  },
-  {
-    firstname: 'lou',
-    lastname: 'bassard',
-    photo: 'https://randomuser.me/api/portraits/women/43.jpg',
-  },
-];
 const Profil = (): JSX.Element => {
+  const [
+    togglePasswordInputsVisibility,
+    setTogglePasswordInputsVisibility,
+  ] = useState(false);
+  const profilMenu = ['Edit Profile'];
+
+  const toggleInputs = () => {
+    setTogglePasswordInputsVisibility(!togglePasswordInputsVisibility);
+  };
+
   return (
     <>
       <section className="profilPage">
@@ -30,9 +28,11 @@ const Profil = (): JSX.Element => {
           </div>
           <div className="profil-menu-block">
             <ul className="menu">
-              <li className="menu-item">Edit Profile</li>
-              <li className="menu-item">Password</li>
-              <li className="menu-item">Email Notifications</li>
+              {profilMenu.map((item, index) => (
+                <li className="menu-item" key={index}>
+                  {item}
+                </li>
+              ))}
             </ul>
             <img
               className="menu-photo"
@@ -75,6 +75,44 @@ const Profil = (): JSX.Element => {
               <option value="ASL" />
               <option value="BSL" />
             </datalist>
+          </div>
+          <div className="password-inputs-block">
+            {togglePasswordInputsVisibility ? (
+              <div className="password-inputs-block-wrapper">
+                <div className="password-blocks">
+                  <div className="password">
+                    <label htmlFor="label-password">Password</label>
+                    <input className="input-password" type="text" />
+                  </div>
+                  <div className="password">
+                    <label htmlFor="label-new-password">
+                      Enter new password
+                    </label>
+                    <input className="input-password" type="text" />
+                  </div>
+                  <div className="password">
+                    <label htmlFor="label-confirm-password">
+                      Confirm new password
+                    </label>
+                    <input className="input-password" type="text" />
+                  </div>
+                </div>
+                <div className="password-button-cancel">
+                  <button className="button-cancel" onClick={toggleInputs}>
+                    X
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="password-inputs-block-wrapper">
+                <button
+                  className="toggle-inputs-password"
+                  onClick={toggleInputs}
+                >
+                  Edit password
+                </button>
+              </div>
+            )}
           </div>
           <div className="button-save">
             <button className="save">Save</button>

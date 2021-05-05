@@ -114,6 +114,10 @@ INPUT ICONS
           justify-content: space-between;
 }
 
+.profilPage .profil .profil-menu-block .menu .menu-item {
+  font-size: 1.15rem;
+}
+
 .profilPage .profil .profil-menu-block .menu-photo {
   height: 6rem;
   border-radius: 50%;
@@ -177,6 +181,7 @@ INPUT ICONS
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-size: 1.15rem;
 }
 
 .profilPage .profil .name-block .firstname {
@@ -197,11 +202,13 @@ INPUT ICONS
   padding-left: 1rem;
   font-size: 1.5rem;
   color: #0e1c33;
+  margin-top: 1rem;
 }
 
 .profilPage .profil .username {
   margin-top: 2rem;
   margin-left: 30%;
+  font-size: 1.15rem;
 }
 
 .profilPage .profil .username .input-username {
@@ -217,11 +224,13 @@ INPUT ICONS
   padding-left: 1rem;
   font-size: 1.5rem;
   color: #0e1c33;
+  margin-top: 1rem;
 }
 
 .profilPage .profil .email {
   margin-top: 2rem;
   margin-left: 30%;
+  font-size: 1.15rem;
 }
 
 .profilPage .profil .input-mail {
@@ -237,11 +246,13 @@ INPUT ICONS
   padding-left: 1rem;
   font-size: 1.5rem;
   color: #0e1c33;
+  margin-top: 1rem;
 }
 
 .profilPage .profil .languages {
   margin-top: 2rem;
   margin-left: 30%;
+  font-size: 1.15rem;
 }
 
 .profilPage .profil .input-languages {
@@ -257,6 +268,144 @@ INPUT ICONS
   padding-left: 1rem;
   font-size: 1.5rem;
   color: #0e1c33;
+  margin-top: 1rem;
+}
+
+.profilPage .profil .password-inputs-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.profilPage .profil .password-inputs-block .password-inputs-block-wrapper {
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profilPage .profil .password-inputs-block .password-inputs-block-wrapper .password-blocks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.profilPage .profil .password-inputs-block .password-inputs-block-wrapper .password-blocks .password {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+}
+
+.profilPage .profil .password-inputs-block .password-inputs-block-wrapper .password-blocks .password input {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  margin-top: 1rem;
+}
+
+.profilPage .profil .password-inputs-block .password-inputs-block-wrapper .password-button-cancel {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.profilPage .profil .password-inputs-block .password-inputs-block-wrapper .password-button-cancel .toggle-inputs-password {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  width: 50%;
+  cursor: pointer;
+}
+
+.profilPage .profil .password-inputs-block .password-inputs-block-wrapper .toggle-inputs-password {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  margin-right: 0;
+  padding-left: 0;
+  width: 50%;
+  border-radius: 0.5rem;
+}
+
+.profilPage .profil .password-button-cancel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.profilPage .profil .password-button-cancel .button-cancel {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  margin-right: 0;
+  padding-left: 0;
+  width: 6rem;
+  border-radius: 0.5rem;
+  color: #dd1e1e;
 }
 
 .profilPage .profil .button-save {
@@ -276,6 +425,7 @@ INPUT ICONS
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  margin-top: 4rem;
 }
 
 .profilPage .profil .button-save .save {

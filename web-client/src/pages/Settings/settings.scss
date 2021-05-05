@@ -40,6 +40,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        .menu-item {
+          font-size: 1.15rem;
+        }
       }
 
       .menu-photo {
@@ -67,13 +70,13 @@
     .name-block {
       display: flex;
       justify-content: space-between;
-      //margin-bottom: 2rem;
       .firstname,
       .lastname {
         margin-top: 2rem;
         flex-basis: 33%;
         display: flex;
         flex-direction: column;
+        font-size: 1.15rem;
       }
       .firstname {
         margin-left: 30%;
@@ -81,30 +84,94 @@
       .input-firstname,
       .input-lastname {
         @include DefaultInput;
+        margin-top: 1rem;
       }
     }
     .username {
       margin-top: 2rem;
       margin-left: 30%;
+      font-size: 1.15rem;
 
       .input-username {
         @include DefaultInput;
+        margin-top: 1rem;
       }
     }
 
     .email {
       margin-top: 2rem;
       margin-left: 30%;
+      font-size: 1.15rem;
     }
     .input-mail {
       @include DefaultInput;
+      margin-top: 1rem;
     }
     .languages {
       margin-top: 2rem;
       margin-left: 30%;
+      font-size: 1.15rem;
     }
     .input-languages {
       @include DefaultInput;
+      margin-top: 1rem;
+    }
+    .password-inputs-block {
+      display: flex;
+      margin-top: 2rem;
+      justify-content: flex-end;
+      .password-inputs-block-wrapper {
+        flex-basis: 70%;
+        display: flex;
+        justify-content: center;
+
+        .password-blocks {
+          display: flex;
+          flex-grow: 1;
+          justify-content: space-between;
+          .password {
+            flex-basis: 30%;
+
+            input {
+              @include DefaultInput;
+              margin-top: 1rem;
+            }
+          }
+        }
+
+        .password-button-cancel {
+          flex-basis: 20%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+          .toggle-inputs-password {
+            @include DefaultInput;
+            width: 50%;
+            cursor: pointer;
+          }
+        }
+
+        .toggle-inputs-password {
+          @include DefaultInput;
+          margin-right: 0;
+          padding-left: 0;
+          width: 50%;
+          border-radius: 0.5rem;
+        }
+      }
+    }
+    .password-button-cancel {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      .button-cancel {
+        @include DefaultInput;
+        margin-right: 0;
+        padding-left: 0;
+        width: 6rem;
+        border-radius: 0.5rem;
+        color: $red;
+      }
     }
 
     .button-save {
@@ -113,6 +180,7 @@
       justify-content: flex-end;
       align-items: flex-end;
       flex-grow: 1;
+      margin-top: 4rem;
       .save {
         @include DefaultInput;
         margin-right: 0;
