@@ -1,0 +1,91 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.login {
+  height: 100vh;
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $lightblue;
+  opacity: 0;
+
+  &-form {
+    @include FormContainer;
+  }
+
+  &-title {
+    @include FormTitle;
+  }
+  &-fields {
+    @include InputField;
+  }
+
+  &-facebook,
+  &-google {
+    @include DefaultInput;
+    margin-right: 0;
+    padding-left: 0;
+    cursor: pointer;
+  }
+
+  &-signin {
+    @include LargeButtonWithoutIcon;
+    padding: 0;
+    margin: 3rem 0rem;
+    border: 1px solid #f1f1f1;
+    transition: 0.4s ease-out;
+    box-shadow: 2px 0px 20px #232f5500;
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+      background-color: #4e69a2;
+      color: $white;
+    }
+  }
+
+  &-separator {
+    @include Separator;
+  }
+
+  &-google,
+  &-facebook {
+    margin-top: 2rem;
+  }
+
+  &-google,
+  &-facebook {
+    @include LargeButtonWithIcon;
+    width: 70%;
+    height: 3.5rem;
+  }
+
+  &-facebook {
+    background-color: $facebookblue;
+    color: $white;
+    transition: 0.4s ease-out;
+
+    &:hover,
+    &:focus {
+      opacity: 0;
+      background-color: #4e69a2;
+    }
+  }
+
+  &-google {
+    transition: 0.2s ease-in-out;
+    background-color: #dd4b39;
+    color: $white;
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+      background-color: #e47365;
+      color: $white;
+    }
+  }
+
+  .has-error {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}

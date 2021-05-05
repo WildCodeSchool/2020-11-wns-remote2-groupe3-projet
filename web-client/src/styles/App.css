@@ -6,6 +6,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 html {
   height: 100%;
   font-size: 62.5%;
@@ -50,6 +52,9 @@ FILTERS
 GRID
 ******************/
 /******************
+Login / SignUp
+******************/
+/******************
 COLORS
  ******************/
 /******************
@@ -84,6 +89,9 @@ FILTERS
 ******************/
 /******************
 GRID
+******************/
+/******************
+Login / SignUp
 ******************/
 /******************
 COLORS
@@ -138,6 +146,11 @@ INPUT ICONS
 .Navbar-list-item:hover .Navbar-list-item-icon,
 .Navbar-list-item:hover .Navbar-list-item-name {
   color: #0e1c33;
+  font-weight: normal;
+}
+
+.Navbar-list-item-selected {
+  color: red;
 }
 
 .Navbar-list-item-icon {
@@ -149,8 +162,6 @@ INPUT ICONS
 
 .Navbar-list-item-name {
   display: block;
-  -webkit-transition: all ease-in 0.2s;
-  transition: all ease-in 0.2s;
   font-family: "Nunito Sans", sans-serif;
   color: #868c9f;
   text-decoration: none;
@@ -192,6 +203,9 @@ FILTERS
 GRID
 ******************/
 /******************
+Login / SignUp
+******************/
+/******************
 COLORS
  ******************/
 /******************
@@ -204,15 +218,15 @@ INPUT ICONS
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   width: 100%;
   min-height: 100%;
   background-color: #f3f6ff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.dashboard-main {
+  width: 100%;
   overflow: scroll;
 }
 
@@ -242,6 +256,126 @@ FILTERS
 ******************/
 /******************
 GRID
+******************/
+/******************
+Login / SignUp
+******************/
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+/******************
+INPUT ICONS
+ ******************/
+.menu {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  list-style-type: none;
+  -ms-flex-preferred-size: 5%;
+      flex-basis: 5%;
+}
+
+.menu-logo {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.menu-logo img {
+  max-width: 10rem;
+  width: 8vw;
+  min-width: 8rem;
+}
+
+.menu-signup {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.menu-signup-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+}
+
+.menu-signup-block a {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.menu-signup-text {
+  font-size: 1.2rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  white-space: nowrap;
+}
+
+.menu-signup-button {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  padding-left: 0;
+  margin-right: 0;
+  width: 15rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  cursor: pointer;
+  margin: 0 1rem;
+}
+
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+/******************
+INPUT ICONS
+ ******************/
+/******************
+BREAKPOINTS
+ ******************/
+/******************
+COMMONS
+ ******************/
+/******************
+NAVBAR
+ ******************/
+/******************
+SEARCH BAR
+ ******************/
+/******************
+FILTERS
+******************/
+/******************
+GRID
+******************/
+/******************
+Login / SignUp
 ******************/
 /******************
 COLORS
