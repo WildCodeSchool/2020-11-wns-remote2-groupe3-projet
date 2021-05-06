@@ -1,0 +1,449 @@
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+/******************
+INPUT ICONS
+ ******************/
+/******************
+BREAKPOINTS
+ ******************/
+/******************
+COMMONS
+ ******************/
+/******************
+NAVBAR
+ ******************/
+/******************
+SEARCH BAR
+ ******************/
+/******************
+FILTERS
+******************/
+/******************
+GRID
+******************/
+/******************
+COLORS
+ ******************/
+/******************
+FONTS
+ ******************/
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+/******************
+INPUT ICONS
+ ******************/
+.profilPage {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profilPage .profil {
+  height: 50%;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profilPage .profil .profil-photo-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profilPage .profil .profil-photo-block .user {
+  margin-left: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.3rem;
+}
+
+.profilPage .profil .profil-photo-block .photo {
+  height: 5rem;
+  border-radius: 50%;
+}
+
+.profilPage .profil .profil-menu-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2rem;
+}
+
+.profilPage .profil .profil-menu-block .menu {
+  list-style-type: none;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.profilPage .profil .profil-menu-block .menu .menu-item {
+  font-size: 1.15rem;
+}
+
+.profilPage .profil .profil-menu-block .menu-photo {
+  height: 6rem;
+  border-radius: 50%;
+  border: 0.1rem solid blue;
+}
+
+.profilPage .profil .profil-menu-block .menu-buttons {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profilPage .profil .profil-menu-block .menu-buttons .menu-upload,
+.profilPage .profil .profil-menu-block .menu-buttons .menu-delete {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  margin-right: 0;
+  padding-left: 0;
+  width: 6rem;
+  border-radius: 0.5rem;
+}
+
+.profilPage .profil .profil-menu-block .menu-buttons .menu-upload {
+  margin: 1.5rem;
+}
+
+.profilPage .profil .name-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.profilPage .profil .name-block .firstname,
+.profilPage .profil .name-block .lastname {
+  margin-top: 2rem;
+  -ms-flex-preferred-size: 33%;
+      flex-basis: 33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 1.15rem;
+}
+
+.profilPage .profil .name-block .firstname {
+  margin-left: 30%;
+}
+
+.profilPage .profil .name-block .input-firstname,
+.profilPage .profil .name-block .input-lastname {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  margin-top: 1rem;
+}
+
+.profilPage .profil .username {
+  margin-top: 2rem;
+  margin-left: 30%;
+  font-size: 1.15rem;
+}
+
+.profilPage .profil .username .input-username {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  margin-top: 1rem;
+}
+
+.profilPage .profil .email {
+  margin-top: 2rem;
+  margin-left: 30%;
+  font-size: 1.15rem;
+}
+
+.profilPage .profil .input-mail {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  margin-top: 1rem;
+}
+
+.profilPage .profil .languages {
+  margin-top: 2rem;
+  margin-left: 30%;
+  font-size: 1.15rem;
+}
+
+.profilPage .profil .input-languages {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  margin-top: 1rem;
+}
+
+.profilPage .profil .password-inputs-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.profilPage .profil .password-inputs-block .password-inputs-block-wrapper {
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profilPage .profil .password-inputs-block .password-inputs-block-wrapper .password-blocks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.profilPage .profil .password-inputs-block .password-inputs-block-wrapper .password-blocks .password {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+}
+
+.profilPage .profil .password-inputs-block .password-inputs-block-wrapper .password-blocks .password input {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  margin-top: 1rem;
+}
+
+.profilPage .profil .password-inputs-block .password-inputs-block-wrapper .password-button-cancel {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.profilPage .profil .password-inputs-block .password-inputs-block-wrapper .password-button-cancel .toggle-inputs-password {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  width: 50%;
+  cursor: pointer;
+}
+
+.profilPage .profil .password-inputs-block .password-inputs-block-wrapper .toggle-inputs-password {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  margin-right: 0;
+  padding-left: 0;
+  width: 50%;
+  border-radius: 0.5rem;
+}
+
+.profilPage .profil .password-button-cancel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.profilPage .profil .password-button-cancel .button-cancel {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  margin-right: 0;
+  padding-left: 0;
+  width: 6rem;
+  border-radius: 0.5rem;
+  color: #dd1e1e;
+}
+
+.profilPage .profil .button-save {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-top: 4rem;
+}
+
+.profilPage .profil .button-save .save {
+  width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 3px 15px #868c9f1c;
+          box-shadow: 0px 3px 15px #868c9f1c;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: #0e1c33;
+  margin-right: 0;
+  padding-left: 0;
+  width: 6rem;
+  border-radius: 0.5rem;
+}
+/*# sourceMappingURL=settings.css.map */

@@ -6,7 +6,7 @@ import Dashboard from './components/layout/dashboard/Dashboard';
 import Overview from './pages/Overview';
 import History from './pages/History';
 import Messages from './pages/Messages';
-import Settings from './pages/Settings';
+import Settings from './pages/Settings/Settings';
 import Logout from './pages/Logout';
 import './styles/App.scss';
 
