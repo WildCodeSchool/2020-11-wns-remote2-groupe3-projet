@@ -82,19 +82,31 @@ const Profil = (): JSX.Element => {
                 <div className="password-blocks">
                   <div className="password">
                     <label htmlFor="label-password">Password</label>
-                    <input className="input-password" type="text" />
+                    <input
+                      className="input-password"
+                      type="password"
+                      autoComplete="current-password"
+                    />
                   </div>
                   <div className="password">
                     <label htmlFor="label-new-password">
                       Enter new password
                     </label>
-                    <input className="input-password" type="text" />
+                    <input
+                      className="input-password"
+                      type="password"
+                      autoComplete="current-password"
+                    />
                   </div>
                   <div className="password">
                     <label htmlFor="label-confirm-password">
                       Confirm new password
                     </label>
-                    <input className="input-password" type="text" />
+                    <input
+                      className="input-password"
+                      type="password"
+                      autoComplete="current-password"
+                    />
                   </div>
                 </div>
                 <div className="password-button-cancel">
